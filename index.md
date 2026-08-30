@@ -9,5 +9,5 @@ Nach dem Zweiten Weltkrieg kam die Region an die Sowjetunion, und der Ort wurde 
 Geschichte und BedeutungGegründet im Jahr 1255 vom Deutschen Orden.War die Krönungsstadt der preußischen Könige.Bekannt durch den Philosophen Immanuel Kant.
 Berühmt für das mathematische Problem der sieben Königsberger Brücken.
 
-## Cranx
+## Cranz
 Cranz oder Zelenogradsk ist eine schoene idyllische Stadt am Baltischen Meeresufer, ganz am Anfang der beruehmten Kurischen Nehrung.
