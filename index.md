@@ -8,3 +8,6 @@ Die Stadt war früher die Hauptstadt von Ostpreußen und ein wichtiges Kultur- u
 Nach dem Zweiten Weltkrieg kam die Region an die Sowjetunion, und der Ort wurde 1946 in Kaliningrad umbenannt.
 Geschichte und BedeutungGegründet im Jahr 1255 vom Deutschen Orden.War die Krönungsstadt der preußischen Könige.Bekannt durch den Philosophen Immanuel Kant.
 Berühmt für das mathematische Problem der sieben Königsberger Brücken.
+
+## Cranx
+Cranz oder Zelenogradsk ist eine schoene idyllische Stadt am Baltischen Meeresufer, ganz am Anfang der beruehmten Kurischen Nehrung.
