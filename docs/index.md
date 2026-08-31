@@ -11,3 +11,13 @@ Berühmt für das mathematische Problem der sieben Königsberger Brücken.
 
 ## Cranz
 Cranz oder Zelenogradsk ist eine schoene idyllische Stadt am Baltischen Meeresufer, ganz am Anfang der beruehmten Kurischen Nehrung.
+
+### Cranz Gruendung
+Ausgangspunkt für die Entwicklung einer prußischen oder kurischen Siedlung am Meer zum deutschen Fischerdorf, 
+das bis in die Mitte des 19. Jhs. hinein „Krantzkuhren“ hieß, war ein 1282 vom Orden angelegtes Wirtshaus am
+Beginn der großen Heerstraße über die Kurische Nehrung, der Crantzkrug”. Dieses Jahr gilt als Gründungsdatum von Cranz. 
+
+### Cranz Gruendung 2
+Ausgangspunkt für die Entwicklung einer prußischen oder kurischen Siedlung am Meer zum deutschen Fischerdorf, 
+das bis in die Mitte des 19. Jhs. hinein „Krantzkuhren“ hieß, war ein 1282 vom Orden angelegtes Wirtshaus am
+Beginn der großen Heerstraße über die Kurische Nehrung, der Crantzkrug”. Dieses Jahr gilt als Gründungsdatum von Cranz. 
