@@ -1,1 +1,76 @@
-site_name: My work experience
+site_name: Rivers and lakes # Название сайта
+site_description: Rivers and lakes of Russia # Описание сайта, добавляется в meta-теги
+theme: # Тема сайта, информация о ее параметрах
+  name: material # Название темы
+  logo: logo.svg # Ссылка на логотип сайта
+  font:
+    text: Roboto # Шрифт текста
+    code: Roboto Mono # Шрифт для текста кода
+  features:
+    #- navigation.sections
+    - navigation.path # Хлебные крошки
+    - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
+    #- navigation.tabs # Верхнее меню
+    #- navigation.tabs.sticky # Фиксация верхнего меню
+    #- Navigation sections # Настройка спойлеров в левом меню
+    #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    - search.suggest # Подсказки при вводе поискового запроса
+    - search.highlight # Подсветка результатов поиска в тексте страницы
+    - content.code.copy # Кнопка копирования в блоке кода
+
+  language: ru # Язык
+  palette: # Настройки светлой и тёмной тем
+    # Настройки светлой темы
+    - scheme: default 
+      toggle:
+        icon: material/weather-sunny # Иконка для активации светлой темы
+        name: Выключить солнышко # Всплывающий текст-подсказка
+      primary: blue # Основной цвет
+      accent: purple # Акцентный цвет
+    # Настройки тёмной темы
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Позвать солнышко
+      primary: deep purple
+      accent: blue
+
+nav: # Структура сайта
+    - Главная страница: index.md
+    - Озёра России: 
+      - lakes/index.md
+      - Онежское озеро: lakes/onega.md
+      - Ладожское озеро: lakes/ladoga.md
+      - Байкал: lakes/baikal.md
+    - Реки России:
+      - rivers/index.md
+      - Свирь: rivers/svir.md
+      - Нева: rivers/neva.md
+      - Ангара: rivers/angara.md
+
+extra:
+  social: # Ссылки на соц.сети
+    - icon: fontawesome/brands/github-alt # Иконка гитхаба
+      link: https://github.com/{your_account} # Ссылка на гитхаб
+
+markdown_extensions: # Расширения markdown
+  - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
+  - footnotes # Поддержка встроенных сносок на страницах
+  - attr_list # Использование html-атрибутов и CSS в элементах markdown
+  - md_in_html # Поддержка markdown внутри html
+  - def_list # Поддержка списков определений
+  - pymdownx.tabbed # Использование вкладок (табов)
+  - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.snippets # Использование заимствованного контента
+  - pymdownx.emoji: # Иконки и эмодзи
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+copyright: |
+  &copy; 2024 NOVILLERO
