@@ -1,5 +1,5 @@
-site_name: Rivers and lakes # Название сайта
-site_description: Rivers and lakes of Russia # Описание сайта, добавляется в meta-теги
+site_name: My work experience # Название сайта 
+site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
   logo: logo.svg # Ссылка на логотип сайта
@@ -38,7 +38,7 @@ theme: # Тема сайта, информация о ее параметрах
       primary: deep purple
       accent: blue
 
-nav: # Структура сайта
+#nav: # Структура сайта
     - Главная страница: index.md
     - Озёра России: 
       - lakes/index.md
@@ -51,7 +51,7 @@ nav: # Структура сайта
       - Нева: rivers/neva.md
       - Ангара: rivers/angara.md
 
-extra:
+#extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
       link: https://github.com/{your_account} # Ссылка на гитхаб
@@ -73,4 +73,4 @@ markdown_extensions: # Расширения markdown
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 copyright: |
-  &copy; 2024 NOVILLERO
+  &copy; 2026 AVENTIS
