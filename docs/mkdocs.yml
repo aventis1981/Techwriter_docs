@@ -1,0 +1,37 @@
+ site_name: My work experience # Название сайта
+ site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
+ nav: # Структура сайта
+    - Readme: index_readme.md
+    - Projects: 
+      - Проект 1: index_1.md
+      - Проект 2: index_2.md
+      - Проект 3: index_3.md
+ copyright:
+  (c) AVENTIS 2026
+ theme:  # Тема сайта, информация о ее параметрах
+   name: material  # Название темы
+   logo: logo.jpg  # Ссылка на логотип сайта
+   font:
+    text: Roboto  # Шрифт текста
+    code: Roboto Mono  # Шрифт для текста кода
+    base: '20px'  # Размер основного текста
+    heading: '28px'  # Размер заголовков
+   features:  # Функции темы
+    - navigation.sections  # Настройка секций навигации
+    - navigation.path  # Хлебные крошки
+    - navigation.indexes  # Позволяет создавать корневые страницы разделов меню.
+    - navigation.tabs  # Верхнее меню
+    - navigation.tabs.sticky  # Фиксация верхнего меню
+    - navigation.expand  # Разворачивает спойлеры в левом меню по умолчанию
+    - toc.integrate  # Фиксирует оглавление страницы в левом меню
+    - navigation.instant  # Функция быстрой загрузки страниц
+    - navigation.top  # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    - search.suggest  # Подсказки при вводе поискового запроса
+    - search.highlight  # Подсветка результатов поиска в тексте страницы
+    - content.code.copy  # Кнопка копирования в блоке кода
+   language: ru # Язык
+   palette: # Настройки светлой и тёмной тем
+    primary: red  # Основной цвет
+    accent: green
+ logo: logo.svg  # Ссылка на логотип сайта
+ 
