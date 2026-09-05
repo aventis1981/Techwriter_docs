@@ -1,7 +1,7 @@
  site_name: My work experience # Название сайта
  site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
  nav: # Структура сайта
-    - Readme: index_readme.md
+    - Readme: index.md
     - Projects: 
       - Проект 1: index_1.md
       - Проект 2: index_2.md
@@ -24,7 +24,7 @@
     - navigation.tabs.sticky  # Фиксация верхнего меню
     - navigation.expand  # Разворачивает спойлеры в левом меню по умолчанию
     - toc.integrate  # Фиксирует оглавление страницы в левом меню
-    - navigation.instant  # Функция быстрой загрузки страниц
+    #- navigation.instant  # Функция быстрой загрузки страниц
     - navigation.top  # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
     - search.suggest  # Подсказки при вводе поискового запроса
     - search.highlight  # Подсветка результатов поиска в тексте страницы
