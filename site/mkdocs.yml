@@ -31,6 +31,7 @@
     - content.code.copy  # Кнопка копирования в блоке кода
    language: ru # Язык
    palette: # Настройки светлой и тёмной тем
-    primary: orange  # Основной цвет
+    primary: red  # Основной цвет
     accent: green
+ logo: logo.svg  # Ссылка на логотип сайта
  
