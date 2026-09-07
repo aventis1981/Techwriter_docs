@@ -8,14 +8,28 @@
       - Проект 3: index_3.md
  copyright:
   (c) AVENTIS 2026
+  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
+   palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal 
+      accent: amber  
+      toggle:
+       icon: material/brightness-7
+       name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber 
+      toggle:
+       icon: material/brightness-4
+       name: Switch to light mode
    logo: logo.jpg  # Ссылка на логотип сайта
    font:
-    text: Roboto  # Шрифт текста
-    code: Roboto Mono  # Шрифт для текста кода
-    base: '20px'  # Размер основного текста
-    heading: '28px'  # Размер заголовков
+    text: Inter  # Шрифт текста
+    code: Fira Code  # Шрифт для текста кода
    features:  # Функции темы
     - navigation.sections  # Настройка секций навигации
     - navigation.path  # Хлебные крошки
@@ -29,8 +43,12 @@
     - search.suggest  # Подсказки при вводе поискового запроса
     - search.highlight  # Подсветка результатов поиска в тексте страницы
     - content.code.copy  # Кнопка копирования в блоке кода
+    - content.code.annotate   # аннотации в блоках кода (стрелочки с пояснениями)
+    - content.tabs.link       # синхронизация вкладок между собой
+    - content.tooltips        # всплывающие подсказки при наведении
+    - header.autohide         # шапка скрывается при прокрутке вниз
+    - navigation.prune        # не грузит все страницы в меню (быстрее работает)
+    - announce.dismiss       # баннер можно закрыть
    language: ru # Язык
-   palette: # Настройки светлой и тёмной тем
-    primary: light-blue  # Основной цвет
-    accent: purple 
+   
  
