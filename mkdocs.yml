@@ -31,6 +31,6 @@
     - content.code.copy  # Кнопка копирования в блоке кода
    language: ru # Язык
    palette: # Настройки светлой и тёмной тем
-    primary: orange  # Основной цвет
-    accent: green
+    primary: light-blue  # Основной цвет
+    accent: purple 
  
