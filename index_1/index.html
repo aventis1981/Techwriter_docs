@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#t-plan" class="md-skip">
+        <a href="#t-plan-1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -440,13 +440,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#t-plan" class="md-nav__link">
+  <a href="#t-plan-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        T-PLAN
+        T-PLAN 1
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="T-PLAN 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ролевая модель системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -589,7 +606,7 @@
 
   <h1>Проект 1</h1>
 
-<h2 id="t-plan">T-PLAN</h2>
+<h2 id="t-plan-1">T-PLAN 1</h2>
 <p>Система задумывалась, прежде всего, <strong>для автоматизации обработки данных для составления финансовых прогнозов и отчётов по деятельности проектов</strong>.</p>
 <p><em>Эти задачи в компании выполняют <del>ПО</del> PMO</em> 
 <abbr title="Project Manager Officer, администратор проекта">PMO</abbr>.</p>
@@ -610,6 +627,65 @@
 <li>обработку данных</li>
 <li>перемещение данных во внешние системы.</li>
 </ul>
+<h3 id="_1">Ролевая модель системы</h3>
+<table>
+  <!-- Шапка таблицы: названия колонок -->
+  <thead>
+    <tr>
+      <th>Roles No.</th>                 <!-- Колонка 1: название режима -->
+      <th>Role (name in system)</th>     <!-- Колонка 2: подробности -->
+      <th>Description</th>     
+      <th>Permission level</th>     
+    </tr>
+  </thead>
+
+  <!-- Тело таблицы: строки с данными -->
+  <tbody>
+    <!-- Строка 1 -->
+    <tr>
+      <td><strong>R01<strong></td>      
+      <td>Structure PMО</td>
+      <td>Structure PMO has permissions to perform distinct actions within the company structure unit(s) PMO is assigned to. <br>
+      An employee shall be assigned as Structure PMO on Admin page. <br>
+      <em>More than 1 structure unit shall be possible at the same time.<em></td>
+      <td>
+- PMO of program <br>
+- PMO of department <br>
+- PMO of solution <br>
+- PMO of subdiv <br>
+- PMO of company <br>
+</td>
+    </tr>
+
+     <!-- Строка 2 -->
+    <tr>
+      <td><strong>R02<strong></td>      
+      <td>Structure manager</td>
+      <td>Structure manager has permissions to perform distinct actions within the company structure unit(s) Manager is assigned to. <br>
+      An employee shall be assigned as Structure Manager on Admin page. <br>
+      </td>
+      <td>
+- Program Manager <br>
+- Department Manager <br>
+- Solution Manager <br>
+- Subdivision Manager <br>
+- Company Manager (General Director) <br>
+</td>
+    </tr>
+
+         <!-- Строка 3 -->
+    <tr>
+      <td><strong>R03<strong></td>      
+      <td>Project PMO</td>
+      <td>Project PMO has permissions to perform distinct actions within the project(s) this PMO is assigned to. <br>
+An employee shall be assigned as Project PMO on Project Profile page of corresponding project. <br>
+More than 1 projects shall be possible at the same time.
+      </td>
+      <td></td>
+    </tr>
+
+  </tbody>
+</table>
 
 
 
