@@ -84,7 +84,7 @@ More than 1 projects shall be possible at the same time.
     <tr>
       <td><strong>R04<strong></td>      
       <td>Project Manager</td>
-	  <td>PProject Manager has permissions to perform distinct actions within the project(s) this Manager is assigned to. <br>
+	  <td>Project Manager has permissions to perform distinct actions within the project(s) this Manager is assigned to. <br>
 An employee shall be assigned as Project Manager on Project Profile page of corresponding project. <br>
 More than 1 projects shall be possible at the same time.
 	  </td>
