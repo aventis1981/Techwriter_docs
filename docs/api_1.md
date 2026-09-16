@@ -28,6 +28,20 @@ This API returns the whole list of users in system.
   </tbody>
 </table>
 
+#### Supported Formats
+
+!!! warning "API limitation"
+    API does not support content negotiation. All `Accept` values return 
+     JSON with code `200`. This is a deviation from HTTP standard.
+
+API works **with JSON only**. The header `Accept` is ignored: server returns always 
+`Content-Type: application/json` regerdless the client's request. 
+
+| Request header | Expected behaviour | Actual behaviour |
+|---|---|---|
+| `Accept: application/json` | `200 OK`, JSON | ✅ `200 OK`, JSON |
+| `Accept: application/xml` | `406 Not Acceptable` | ❌ `200 OK`, JSON (standard deviation) |
+| `Accept: */*` | `200 OK`, дефолтный формат | ✅ `200 OK`, JSON |
 
 
 
