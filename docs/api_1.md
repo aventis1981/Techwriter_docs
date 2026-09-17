@@ -1,13 +1,25 @@
-#### Service title: 
+#### Service title 
 GET/users
 
-#### Goal:
+#### Goal
 This API returns the whole list of users in system.
 
 > **Important:** API does not support the filtration by fields (name, email, address ect). To get a user send `GET /users/{id}`.
 
 
-#### Request parameters:
+#### Request parameters
+
+
+#### Request examples
+
+##### Get all users
+
+GET https://jsonplaceholder.typicode.com/users
+
+##### Get one user by ID
+
+GET https://jsonplaceholder.typicode.com/users/3
+
 
 <table>
   <!-- Шапка таблицы: названия колонок -->
@@ -36,23 +48,20 @@ This API returns the whole list of users in system.
 
 | Header | Value | Obligatory | Comment |
 |-----------|----------|--------------|------------|
-| `Accept` | `application/json` | no | It is recommended to indecate explicitly. Server returns JSON in case of `Accept: */*`. |
+| `Accept` | `application/json` | no | It is recommended to indicate explicitly. Server returns JSON in case of `Accept: */*`. |
 | `Authorization` | — | no | - |
 
 #### Supported Formats
 
-!!! warning "API limitation"
+!!! warning "API limitation": API works **with JSON only**.
     API does not support content negotiation. All `Accept` values return 
      JSON with code `200`. This is a deviation from HTTP standard.
-
-API works **with JSON only**. The header `Accept` is ignored: server returns always 
-`Content-Type: application/json` regerdless the client's request. 
 
 | Request header | Expected behaviour | Actual behaviour |
 |---|---|---|
 | `Accept: application/json` | `200 OK`, JSON | ✅ `200 OK`, JSON |
 | `Accept: application/xml` | `406 Not Acceptable` | ❌ `200 OK`, JSON (standard deviation) |
-| `Accept: */*` | `200 OK`, дефолтный формат | ✅ `200 OK`, JSON |
+| `Accept: */*` | `200 OK`, default format | ✅ `200 OK`, JSON |
 
 #### Request example (Postman / cURL)
 
@@ -67,15 +76,16 @@ curl -X GET \
   https://jsonplaceholder.typicode.com/users \
   -H "Accept: application/json"
   
-  
 ##### Successful response 
  - Status: 200 OK
 
 - Content type: application/json; charset=utf-8
 
-- Respponse body: array of objects -  users (10 records).
+- Response body: array of objects -  users (10 records).
 
 - Example of short response:
+```markdown
+```json
 [
   {
     "id": 1,
@@ -102,5 +112,11 @@ curl -X GET \
   }
 ]
 
-
+#### Responce codes
+| Code | State | Description | Action of developer |
+|-----------|----------|--------------|------------|
+|200| OK |	Successful request. In responce body - array of users of empty array| Process the data anf show list of users|
+404	| Not Found	| Ressource not found (f.e. path does not exist)  |	Check URL, process UI error |
+500 |	Internal Server Error	| Error on server site 	| Repeat request later, inform administrator  |
+503 |	Service Unavailable	| Service tempporary unavailable (maintenance works)	| Use  retry logic with exponential delay |
 
