@@ -84,7 +84,6 @@ curl -X GET \
 - Response body: array of objects -  users (10 records).
 
 - Example of short response:
-```markdown
 ```json
 [
   {
