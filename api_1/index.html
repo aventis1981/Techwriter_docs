@@ -23,7 +23,7 @@
     
     
       
-        <title>API 1 - My work experience</title>
+        <title>API GET/users - My work experience</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#service-title" class="md-skip">
+        <a href="#api-reference" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API 1
+              API GET/users
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <span class="md-ellipsis">
     
   
-    API 1
+    API GET/users
   
 
     
@@ -493,7 +493,7 @@
   <span class="md-ellipsis">
     
   
-    API 1
+    API GET/users
   
 
     
@@ -517,21 +517,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#service-title" class="md-nav__link">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Service title
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Goal
+        API reference
       
     </span>
   </a>
@@ -589,17 +578,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request headers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#supported-formats" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -644,7 +622,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#successful-response" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -654,17 +637,23 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#responce-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
         Responce codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data structure
       
     </span>
   </a>
@@ -752,16 +741,41 @@
 
 
 
-  <h1>API 1</h1>
+  <h1>API GET/users</h1>
 
-<h4 id="service-title">Service title</h4>
+<h4 id="api-reference">API reference</h4>
 <p>GET/users</p>
-<h4 id="goal">Goal</h4>
 <p>This API returns the whole list of users in system.</p>
 <blockquote>
 <p><strong>Important:</strong> API does not support the filtration by fields (name, email, address ect). To get a user send <code>GET /users/{id}</code>.</p>
 </blockquote>
 <h4 id="request-parameters">Request parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td><code>GET</code></td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td><code>https://jsonplaceholder.typicode.com/users</code></td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Content type (header)</strong></td>
+<td><code>Accept: application/json</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="request-examples">Request examples</h4>
 <h5 id="get-all-users">Get all users</h5>
 <p>GET https://jsonplaceholder.typicode.com/users</p>
@@ -789,31 +803,6 @@
   </tbody>
 </table>
 
-<h4 id="request-headers">Request headers</h4>
-<table>
-<thead>
-<tr>
-<th>Header</th>
-<th>Value</th>
-<th>Obligatory</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Accept</code></td>
-<td><code>application/json</code></td>
-<td>no</td>
-<td>It is recommended to indicate explicitly. Server returns JSON in case of <code>Accept: */*</code>.</td>
-</tr>
-<tr>
-<td><code>Authorization</code></td>
-<td>—</td>
-<td>no</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
 <h4 id="supported-formats">Supported Formats</h4>
 <p>!!! warning "API limitation": API works <strong>with JSON only</strong>.
     API does not support content negotiation. All <code>Accept</code> values return 
@@ -846,14 +835,13 @@
 </table>
 <h4 id="request-example-postman-curl">Request example (Postman / cURL)</h4>
 <h5 id="postman">Postman</h5>
-<p>```http
-GET https://jsonplaceholder.typicode.com/users
+<p>GET https://jsonplaceholder.typicode.com/users
 Accept: application/json</p>
 <h5 id="curl">cURL</h5>
 <p>curl -X GET \
   https://jsonplaceholder.typicode.com/users \
   -H "Accept: application/json"</p>
-<h5 id="successful-response">Successful response</h5>
+<h4 id="successful-response">Successful response</h4>
 <ul>
 <li>
 <p>Status: 200 OK</p>
@@ -864,37 +852,33 @@ Accept: application/json</p>
 <li>
 <p>Response body: array of objects -  users (10 records).</p>
 </li>
-<li>
-<p>Example of short response:
-```json
-[
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-    "phone": "1-770-736-8031 x56442",
-    "website": "hildegard.org",
-    "company": {
-      "name": "Romaguera-Crona",
-      "catchPhrase": "Multi-layered client-server neural-net",
-      "bs": "harness real-time e-markets"
-    }
-  }
-]</p>
-</li>
 </ul>
-<h4 id="responce-codes">Responce codes</h4>
+<p>Example of short response:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 1,
+  &quot;name&quot;: &quot;Leanne Graham&quot;,
+  &quot;username&quot;: &quot;Bret&quot;,
+  &quot;email&quot;: &quot;Sincere@april.biz&quot;,
+  &quot;address&quot;: {
+    &quot;street&quot;: &quot;Kulas Light&quot;,
+    &quot;suite&quot;: &quot;Apt. 556&quot;,
+    &quot;city&quot;: &quot;Gwenborough&quot;,
+    &quot;zipcode&quot;: &quot;92998-3874&quot;,
+    &quot;geo&quot;: {
+      &quot;lat&quot;: &quot;-37.3159&quot;,
+      &quot;lng&quot;: &quot;81.1496&quot;
+    }
+  },
+  &quot;phone&quot;: &quot;1-770-736-8031 x56442&quot;,
+  &quot;website&quot;: &quot;hildegard.org&quot;,
+  &quot;company&quot;: {
+    &quot;name&quot;: &quot;Romaguera-Crona&quot;,
+    &quot;catchPhrase&quot;: &quot;Multi-layered client-server neural-net&quot;,
+    &quot;bs&quot;: &quot;harness real-time e-markets&quot;
+  }
+}
+</code></pre>
+<h3 id="responce-codes">Responce codes</h3>
 <table>
 <thead>
 <tr>
@@ -928,6 +912,85 @@ Accept: application/json</p>
 <td>Service Unavailable</td>
 <td>Service tempporary unavailable (maintenance works)</td>
 <td>Use  retry logic with exponential delay</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-structure">Data structure</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Validation</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>user ID</td>
+<td>1</td>
+<td>Positive integers only</td>
+<td>system generation, read-only</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>full name</td>
+<td>"Leanne Graham"</td>
+<td>up to 100 characters (letters, whitespace, hyphen)</td>
+<td>No validation in this API (test API)</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>login name</td>
+<td>"Bret"</td>
+<td>3-20 charcters; only letters, integers, underscore)</td>
+<td>No validation in this API (test API)</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>email</td>
+<td>"Sincere@april.biz"</td>
+<td>email formatm up to 254 characters</td>
+<td>-</td>
+</tr>
+<tr>
+<td>address</td>
+<td>object</td>
+<td>embedded object with address</td>
+<td>{ "street": "...", "city": "..." }</td>
+<td>up to 100 characters, letters and whitespace only)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>phone number</td>
+<td>"1-770-736-8031 x56442"</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>website</td>
+<td>string</td>
+<td>Website of user/company</td>
+<td>"hildegard.org"</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>company</td>
+<td>object</td>
+<td>Company data</td>
+<td>{ "name": "...", "bs": "..." }</td>
+<td>-</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
