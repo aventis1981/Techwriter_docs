@@ -6,8 +6,9 @@
       - Проект 1: index_1.md
       - Проект 2: index_2.md
       - Проект 3: index_3.md
-    - API Descriptions: 
+    - API Descriptions:     
       - API GET/users: api_1.md
+      - API GET/comments: api_2.md
  copyright:
   (c) AVENTIS 2026
   
