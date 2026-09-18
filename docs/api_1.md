@@ -1,13 +1,17 @@
-#### Service title 
+#### API reference
+
 GET/users
 
-#### Goal
 This API returns the whole list of users in system.
-
 > **Important:** API does not support the filtration by fields (name, email, address ect). To get a user send `GET /users/{id}`.
 
-
 #### Request parameters
+| Parameter | Value |
+| --- | --- |
+| **Method** | `GET` |
+| **URL** | `https://jsonplaceholder.typicode.com/users` |
+| **Authentication** | -  |
+| **Content type (header)** | `Accept: application/json` |
 
 
 #### Request examples
@@ -44,13 +48,6 @@ GET https://jsonplaceholder.typicode.com/users/3
 </table>
 
 
-#### Request headers 
-
-| Header | Value | Obligatory | Comment |
-|-----------|----------|--------------|------------|
-| `Accept` | `application/json` | no | It is recommended to indicate explicitly. Server returns JSON in case of `Accept: */*`. |
-| `Authorization` | — | no | - |
-
 #### Supported Formats
 
 !!! warning "API limitation": API works **with JSON only**.
@@ -66,8 +63,6 @@ GET https://jsonplaceholder.typicode.com/users/3
 #### Request example (Postman / cURL)
 
 ##### Postman
-
-```http
 GET https://jsonplaceholder.typicode.com/users
 Accept: application/json
 
@@ -76,46 +71,59 @@ curl -X GET \
   https://jsonplaceholder.typicode.com/users \
   -H "Accept: application/json"
   
-##### Successful response 
+#### Successful response 
  - Status: 200 OK
 
 - Content type: application/json; charset=utf-8
 
 - Response body: array of objects -  users (10 records).
 
-- Example of short response:
-```json
-[
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-    "phone": "1-770-736-8031 x56442",
-    "website": "hildegard.org",
-    "company": {
-      "name": "Romaguera-Crona",
-      "catchPhrase": "Multi-layered client-server neural-net",
-      "bs": "harness real-time e-markets"
-    }
-  }
-]
+Example of short response:
 
-#### Responce codes
+```json
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+```
+
+### Responce codes
 | Code | State | Description | Action of developer |
 |-----------|----------|--------------|------------|
 |200| OK |	Successful request. In responce body - array of users of empty array| Process the data anf show list of users|
 404	| Not Found	| Ressource not found (f.e. path does not exist)  |	Check URL, process UI error |
 500 |	Internal Server Error	| Error on server site 	| Repeat request later, inform administrator  |
 503 |	Service Unavailable	| Service tempporary unavailable (maintenance works)	| Use  retry logic with exponential delay |
+
+### Data structure
+
+| Field | Type | Description | Example | Validation |  Comment |
+|-----------|----------|--------------|------------|--------------|------------|
+id |	integer|	user ID	|1 | Positive integers only | system generation, read-only |
+name	|string| full name|	"Leanne Graham"| up to 100 characters (letters, whitespace, hyphen) | No validation in this API (test API) |
+username	|string	|login name	|"Bret"| 3-20 charcters; only letters, integers, underscore) | No validation in this API (test API) |
+email	|string	|email|"Sincere@april.biz"| email formatm up to 254 characters | - |
+address	|object|	embedded object with address|	{ "street": "...", "city": "..." }| up to 100 characters, letters and whitespace only) | - |
+phone	|string	|phone number	|"1-770-736-8031 x56442"| -| -|
+website	|string	| Website of user/company	|"hildegard.org"| -| -|
+company	|object	|Company data	|{ "name": "...", "bs": "..." }| -| -|
 
