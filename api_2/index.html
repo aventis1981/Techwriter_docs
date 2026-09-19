@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#api-get-comments" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -497,6 +497,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -539,6 +541,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -547,10 +551,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API reference
+        Описание запроса
       
     </span>
   </a>
@@ -558,10 +562,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-parameters" class="md-nav__link">
+  <a href="#query-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request parameters
+        Параметры запроса (Query Parameters)
       
     </span>
   </a>
@@ -569,22 +573,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-examples" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request examples
+        Примеры запросов
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Request examples">
+    <nav class="md-nav" aria-label="Примеры запросов">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get-all-users" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get all users
+        Получить все комментарии (без фильтров)
       
     </span>
   </a>
@@ -592,10 +596,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-one-user-by-id" class="md-nav__link">
+  <a href="#no1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get one user by ID
+        Получить комментарии для поста №1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Получить комментарии пользователя №5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no1-no1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Получить комментарии поста №1 от пользователя №1 (пересечение условий)
       
     </span>
   </a>
@@ -608,10 +634,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-formats" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Formats
+        Коды ответов и поведение
       
     </span>
   </a>
@@ -619,33 +645,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-example-postman-curl" class="md-nav__link">
+  <a href="#200-ok" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request example (Postman / cURL)
+        Формат успешного ответа (200 OK)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Request example (Postman / cURL)">
+    <nav class="md-nav" aria-label="Формат успешного ответа (200 OK)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#postman" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Postman
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cURL
+        Пример одного объекта из массива:
       
     </span>
   </a>
@@ -658,32 +673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#successful-response" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Successful response
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responce-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responce codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data structure
+        Структура ключевых полей
       
     </span>
   </a>
@@ -771,256 +764,178 @@
 
 
 
-  <h1>API GET/comments</h1>
-
-<h4 id="api-reference">API reference</h4>
-<p>GET/users</p>
-<p>This API returns the whole list of users in system.</p>
-<blockquote>
-<p><strong>Important:</strong> API does not support the filtration by fields (name, email, address ect). To get a user send <code>GET /users/{id}</code>.</p>
-</blockquote>
-<h4 id="request-parameters">Request parameters</h4>
+<h1 id="api-get-comments">API: Комментарии (<code>GET /comments</code>)</h1>
+<p>Ресурс для получения списка комментариев. Поддерживает фильтрацию по <code>postId</code> и <code>userId</code>. 
+Идеален для демонстрации query‑параметров, внешних ключей и примеров ответов.</p>
+<hr />
+<h2 id="_1">Описание запроса</h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Value</th>
+<th>Параметр</th>
+<th>Значение</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Method</strong></td>
+<td><strong>Метод</strong></td>
 <td><code>GET</code></td>
 </tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://jsonplaceholder.typicode.com/users</code></td>
+<td><code>https://jsonplaceholder.typicode.com/comments</code></td>
 </tr>
 <tr>
-<td><strong>Authentication</strong></td>
-<td>-</td>
+<td><strong>Аутентификация</strong></td>
+<td>Не требуется</td>
 </tr>
 <tr>
-<td><strong>Content type (header)</strong></td>
-<td><code>Accept: application/json</code></td>
+<td><strong>Тип контента (Content-Type)</strong></td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td><strong>Формат ответа</strong></td>
+<td>JSON-массив объектов <code>Comment</code></td>
 </tr>
 </tbody>
 </table>
-<h4 id="request-examples">Request examples</h4>
-<h5 id="get-all-users">Get all users</h5>
-<p>GET https://jsonplaceholder.typicode.com/users</p>
-<h5 id="get-one-user-by-id">Get one user by ID</h5>
-<p>GET https://jsonplaceholder.typicode.com/users/3</p>
-<table>
-  <!-- Шапка таблицы: названия колонок -->
-  <thead>
-    <tr>
-      <th>Parameter</th>                 <!-- Колонка 1: название режима -->
-      <th>Type</th>     <!-- Колонка 2: подробности -->
-      <th>Obligatory</th>     
-      <th>Description</th>     
-    </tr>
-  </thead>
-  <!-- Тело таблицы: строки с данными -->
-  <tbody>
-    <!-- Строка 1 -->
-    <tr>
-      <td><strong>-<strong></td>      
-      <td><strong>-<strong></td>
-      <td><strong>-<strong></td>
-      <td>Endpoint does nor accept any parameters for filtration.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="supported-formats">Supported Formats</h4>
-<p>!!! warning "API limitation": API works <strong>with JSON only</strong>.
-    API does not support content negotiation. All <code>Accept</code> values return 
-     JSON with code <code>200</code>. This is a deviation from HTTP standard.</p>
+<hr />
+<h2 id="query-parameters">Параметры запроса (Query Parameters)</h2>
+<p>Эндпоинт поддерживает фильтрацию через query-параметры. Если передать оба параметра, API вернёт комментарии, удовлетворяющие обоим условиям (пересечение фильтров).</p>
 <table>
 <thead>
 <tr>
-<th>Request header</th>
-<th>Expected behaviour</th>
-<th>Actual behaviour</th>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Обязательный</th>
+<th>По умолчанию</th>
+<th>Описание</th>
+<th>Пример</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Accept: application/json</code></td>
-<td><code>200 OK</code>, JSON</td>
-<td>✅ <code>200 OK</code>, JSON</td>
+<td><code>postId</code></td>
+<td>integer</td>
+<td>Нет</td>
+<td>—</td>
+<td>Фильтр: комментарии к конкретному посту</td>
+<td><code>?postId=1</code></td>
 </tr>
 <tr>
-<td><code>Accept: application/xml</code></td>
-<td><code>406 Not Acceptable</code></td>
-<td>❌ <code>200 OK</code>, JSON (standard deviation)</td>
-</tr>
-<tr>
-<td><code>Accept: */*</code></td>
-<td><code>200 OK</code>, default format</td>
-<td>✅ <code>200 OK</code>, JSON</td>
+<td><code>userId</code></td>
+<td>integer</td>
+<td>Нет</td>
+<td>—</td>
+<td>Фильтр: комментарии конкретного пользователя</td>
+<td><code>?userId=5</code></td>
 </tr>
 </tbody>
 </table>
-<h4 id="request-example-postman-curl">Request example (Postman / cURL)</h4>
-<h5 id="postman">Postman</h5>
-<p>GET https://jsonplaceholder.typicode.com/users
-Accept: application/json</p>
-<h5 id="curl">cURL</h5>
-<p>curl -X GET \
-  https://jsonplaceholder.typicode.com/users \
-  -H "Accept: application/json"</p>
-<h4 id="successful-response">Successful response</h4>
-<ul>
-<li>
-<p>Status: 200 OK</p>
-</li>
-<li>
-<p>Content type: application/json; charset=utf-8</p>
-</li>
-<li>
-<p>Response body: array of objects -  users (10 records).</p>
-</li>
-</ul>
-<p>Example of short response:</p>
-<pre><code class="language-json">{
-  &quot;id&quot;: 1,
-  &quot;name&quot;: &quot;Leanne Graham&quot;,
-  &quot;username&quot;: &quot;Bret&quot;,
-  &quot;email&quot;: &quot;Sincere@april.biz&quot;,
-  &quot;address&quot;: {
-    &quot;street&quot;: &quot;Kulas Light&quot;,
-    &quot;suite&quot;: &quot;Apt. 556&quot;,
-    &quot;city&quot;: &quot;Gwenborough&quot;,
-    &quot;zipcode&quot;: &quot;92998-3874&quot;,
-    &quot;geo&quot;: {
-      &quot;lat&quot;: &quot;-37.3159&quot;,
-      &quot;lng&quot;: &quot;81.1496&quot;
-    }
-  },
-  &quot;phone&quot;: &quot;1-770-736-8031 x56442&quot;,
-  &quot;website&quot;: &quot;hildegard.org&quot;,
-  &quot;company&quot;: {
-    &quot;name&quot;: &quot;Romaguera-Crona&quot;,
-    &quot;catchPhrase&quot;: &quot;Multi-layered client-server neural-net&quot;,
-    &quot;bs&quot;: &quot;harness real-time e-markets&quot;
-  }
-}
+<blockquote>
+<p>⚠️ <strong>Важно:</strong> JSONPlaceholder не возвращает ошибки валидации при некорректных параметрах (например, <code>?postId=abc</code>). 
+Вместо этого он просто возвращает пустой массив <code>[]</code>. В документации это стоит явно отметить, чтобы разработчики не ожидали HTTP‑ошибки.</p>
+</blockquote>
+<hr />
+<h2 id="_2">Примеры запросов</h2>
+<h3 id="_3">Получить все комментарии (без фильтров)</h3>
+<pre><code class="language-bash">curl -X GET \
+  &quot;https://jsonplaceholder.typicode.com/comments&quot;
 </code></pre>
-<h3 id="responce-codes">Responce codes</h3>
+<h3 id="no1">Получить комментарии для поста №1</h3>
+<pre><code class="language-bash">curl -X GET \
+  &quot;https://jsonplaceholder.typicode.com/comments?postId=1&quot;
+</code></pre>
+<h3 id="no5">Получить комментарии пользователя №5</h3>
+<pre><code class="language-bash">curl -X GET \
+  &quot;https://jsonplaceholder.typicode.com/comments?userId=5&quot;
+</code></pre>
+<h3 id="no1-no1">Получить комментарии поста №1 от пользователя №1 (пересечение условий)</h3>
+<pre><code class="language-bash">curl -X GET \
+  &quot;https://jsonplaceholder.typicode.com/comments?postId=1&amp;userId=1&quot;
+</code></pre>
+<h2 id="_4">Коды ответов и поведение</h2>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>State</th>
-<th>Description</th>
-<th>Action of developer</th>
+<th>Код</th>
+<th>Статус</th>
+<th>Поведение API</th>
+<th>Что документировать для разработчика</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>200</td>
 <td>OK</td>
-<td>Successful request. In responce body - array of users of empty array</td>
-<td>Process the data anf show list of users</td>
+<td>Успех</td>
+<td>Возвращает JSON‑массив (даже если он пустой [])</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>—  Не используется в JSONPlaceholder</td>
+<td>В документации укажи: «API не проверяет типы параметров. Строковое значение не вызовет ошибку, а просто вернёт пустой результат».</td>
 </tr>
 <tr>
 <td>404</td>
 <td>Not Found</td>
-<td>Ressource not found (f.e. path does not exist)</td>
-<td>Check URL, process UI error</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error</td>
-<td>Error on server site</td>
-<td>Repeat request later, inform administrator</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable</td>
-<td>Service tempporary unavailable (maintenance works)</td>
-<td>Use  retry logic with exponential delay</td>
+<td>—  Не используется для несуществующих ID</td>
+<td>В документации сделай пометку: «Отсутствие данных возвращается как пустой массив [], а не как 404».</td>
 </tr>
 </tbody>
 </table>
-<h3 id="data-structure">Data structure</h3>
+<h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
+<h3 id="_5">Пример одного объекта из массива:</h3>
+<p>json</p>
+<pre><code>{
+  &quot;postId&quot;: 1,
+  &quot;id&quot;: 1,
+  &quot;name&quot;: &quot;id labore et dolore&quot;,
+  &quot;email&quot;: &quot;Eliseo@gardner.biz&quot;,
+  &quot;body&quot;: &quot;et ea vero quia laudantium autem. delectus soluta necessitatibus cum ut magni deleniti aut officia. aut aut ea nobis maiores vel cum est sit voluptatibus voluptatem quia&quot;
+}
+</code></pre>
+<h2 id="_6">Структура ключевых полей</h2>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
-<th>Validation</th>
-<th>Comment</th>
+<th>Поле</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Ограничения / примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>user ID</td>
-<td>1</td>
-<td>Positive integers only</td>
-<td>system generation, read-only</td>
+<td>Уникальный идентификатор комментария</td>
+<td>Только положительные целые числа</td>
+</tr>
+<tr>
+<td>postId</td>
+<td>integer</td>
+<td>ID поста, к которому относится комментарий Внешний ключ; связь «многие к одному» (у поста много комментариев)</td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>full name</td>
-<td>"Leanne Graham"</td>
-<td>up to 100 characters (letters, whitespace, hyphen)</td>
-<td>No validation in this API (test API)</td>
-</tr>
-<tr>
-<td>username</td>
-<td>string</td>
-<td>login name</td>
-<td>"Bret"</td>
-<td>3-20 charcters; only letters, integers, underscore)</td>
-<td>No validation in this API (test API)</td>
+<td>Имя автора комментария  До 100 символов (по соглашению)</td>
+<td></td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>email</td>
-<td>"Sincere@april.biz"</td>
-<td>email formatm up to 254 characters</td>
-<td>-</td>
+<td>Email автора</td>
+<td>Формат email; может использоваться для уведомлений</td>
 </tr>
 <tr>
-<td>address</td>
-<td>object</td>
-<td>embedded object with address</td>
-<td>{ "street": "...", "city": "..." }</td>
-<td>up to 100 characters, letters and whitespace only)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>phone</td>
+<td>body</td>
 <td>string</td>
-<td>phone number</td>
-<td>"1-770-736-8031 x56442"</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>website</td>
-<td>string</td>
-<td>Website of user/company</td>
-<td>"hildegard.org"</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>company</td>
-<td>object</td>
-<td>Company data</td>
-<td>{ "name": "...", "bs": "..." }</td>
-<td>-</td>
-<td>-</td>
+<td>Текст комментария</td>
+<td>До 2000 символов; поддерживает переносы строк</td>
 </tr>
 </tbody>
 </table>
