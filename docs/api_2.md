@@ -1,129 +1,88 @@
-#### API reference
+# API: Комментарии (`GET /comments`)
 
-GET/users
+Ресурс для получения списка комментариев. Поддерживает фильтрацию по `postId` и `userId`. 
+Идеален для демонстрации query‑параметров, внешних ключей и примеров ответов.
 
-This API returns the whole list of users in system.
-> **Important:** API does not support the filtration by fields (name, email, address ect). To get a user send `GET /users/{id}`.
+---
 
-#### Request parameters
-| Parameter | Value |
+## Описание запроса
+
+| Параметр | Значение |
 | --- | --- |
-| **Method** | `GET` |
-| **URL** | `https://jsonplaceholder.typicode.com/users` |
-| **Authentication** | -  |
-| **Content type (header)** | `Accept: application/json` |
+| **Метод** | `GET` |
+| **URL** | `https://jsonplaceholder.typicode.com/comments` |
+| **Аутентификация** | Не требуется |
+| **Тип контента (Content-Type)** | `application/json` |
+| **Формат ответа** | JSON-массив объектов `Comment` |
 
+---
 
-#### Request examples
+## Параметры запроса (Query Parameters)
 
-##### Get all users
+Эндпоинт поддерживает фильтрацию через query-параметры. Если передать оба параметра, API вернёт комментарии, удовлетворяющие обоим условиям (пересечение фильтров).
 
-GET https://jsonplaceholder.typicode.com/users
+| Параметр | Тип | Обязательный | По умолчанию | Описание | Пример |
+| --- | --- | --- | --- | --- | --- |
+| `postId` | integer | Нет | — | Фильтр: комментарии к конкретному посту | `?postId=1` |
+| `userId` | integer | Нет | — | Фильтр: комментарии конкретного пользователя | `?userId=5` |
 
-##### Get one user by ID
+> ⚠️ **Важно:** JSONPlaceholder не возвращает ошибки валидации при некорректных параметрах (например, `?postId=abc`). 
+Вместо этого он просто возвращает пустой массив `[]`. В документации это стоит явно отметить, чтобы разработчики не ожидали HTTP‑ошибки.
 
-GET https://jsonplaceholder.typicode.com/users/3
+---
 
+## Примеры запросов
 
-<table>
-  <!-- Шапка таблицы: названия колонок -->
-  <thead>
-    <tr>
-      <th>Parameter</th>                 <!-- Колонка 1: название режима -->
-      <th>Type</th>     <!-- Колонка 2: подробности -->
-	  <th>Obligatory</th>     
-	  <th>Description</th>     
-    </tr>
-  </thead>
-  <!-- Тело таблицы: строки с данными -->
-  <tbody>
-    <!-- Строка 1 -->
-    <tr>
-      <td><strong>-<strong></td>      
-      <td><strong>-<strong></td>
-	  <td><strong>-<strong></td>
-	  <td>Endpoint does nor accept any parameters for filtration.</td>
-    </tr>
-  </tbody>
-</table>
+### Получить все комментарии (без фильтров)
 
-
-#### Supported Formats
-
-!!! warning "API limitation": API works **with JSON only**.
-    API does not support content negotiation. All `Accept` values return 
-     JSON with code `200`. This is a deviation from HTTP standard.
-
-| Request header | Expected behaviour | Actual behaviour |
-|---|---|---|
-| `Accept: application/json` | `200 OK`, JSON | ✅ `200 OK`, JSON |
-| `Accept: application/xml` | `406 Not Acceptable` | ❌ `200 OK`, JSON (standard deviation) |
-| `Accept: */*` | `200 OK`, default format | ✅ `200 OK`, JSON |
-
-#### Request example (Postman / cURL)
-
-##### Postman
-GET https://jsonplaceholder.typicode.com/users
-Accept: application/json
-
-##### cURL 
+```bash
 curl -X GET \
-  https://jsonplaceholder.typicode.com/users \
-  -H "Accept: application/json"
+  "https://jsonplaceholder.typicode.com/comments"
+```
   
-#### Successful response 
- - Status: 200 OK
+### Получить комментарии для поста №1
+```bash
+curl -X GET \
+  "https://jsonplaceholder.typicode.com/comments?postId=1"
+```
 
-- Content type: application/json; charset=utf-8
+### Получить комментарии пользователя №5
+```bash
+curl -X GET \
+  "https://jsonplaceholder.typicode.com/comments?userId=5"
+```
 
-- Response body: array of objects -  users (10 records).
+###Получить комментарии поста №1 от пользователя №1 (пересечение условий)
+```bash
+curl -X GET \
+  "https://jsonplaceholder.typicode.com/comments?postId=1&userId=1"
+```
 
-Example of short response:
+## Коды ответов и поведение
+|Код	|Статус	|Поведение API	|Что документировать для разработчика|
+| --- | --- | --- | --- |
+|200 |OK	|Успех	|Возвращает JSON‑массив (даже если он пустой [])|	Это стандартный успешный ответ. В примерах стоит показать и непустой, и пустой массив.|
+|400 |Bad Request	|—	Не используется в JSONPlaceholder|	В документации укажи: «API не проверяет типы параметров. Строковое значение не вызовет ошибку, а просто вернёт пустой результат».|
+|404 |Not Found	|—	Не используется для несуществующих ID	|В документации сделай пометку: «Отсутствие данных возвращается как пустой массив [], а не как 404».|
 
-```json
+## Формат успешного ответа (200 OK)
+### Пример одного объекта из массива:
+json
+```
 {
+  "postId": 1,
   "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  "name": "id labore et dolore",
+  "email": "Eliseo@gardner.biz",
+  "body": "et ea vero quia laudantium autem. delectus soluta necessitatibus cum ut magni deleniti aut officia. aut aut ea nobis maiores vel cum est sit voluptatibus voluptatem quia"
 }
 ```
 
-### Responce codes
-| Code | State | Description | Action of developer |
-|-----------|----------|--------------|------------|
-|200| OK |	Successful request. In responce body - array of users of empty array| Process the data anf show list of users|
-404	| Not Found	| Ressource not found (f.e. path does not exist)  |	Check URL, process UI error |
-500 |	Internal Server Error	| Error on server site 	| Repeat request later, inform administrator  |
-503 |	Service Unavailable	| Service tempporary unavailable (maintenance works)	| Use  retry logic with exponential delay |
-
-### Data structure
-
-| Field | Type | Description | Example | Validation |  Comment |
-|-----------|----------|--------------|------------|--------------|------------|
-id |	integer|	user ID	|1 | Positive integers only | system generation, read-only |
-name	|string| full name|	"Leanne Graham"| up to 100 characters (letters, whitespace, hyphen) | No validation in this API (test API) |
-username	|string	|login name	|"Bret"| 3-20 charcters; only letters, integers, underscore) | No validation in this API (test API) |
-email	|string	|email|"Sincere@april.biz"| email formatm up to 254 characters | - |
-address	|object|	embedded object with address|	{ "street": "...", "city": "..." }| up to 100 characters, letters and whitespace only) | - |
-phone	|string	|phone number	|"1-770-736-8031 x56442"| -| -|
-website	|string	| Website of user/company	|"hildegard.org"| -| -|
-company	|object	|Company data	|{ "name": "...", "bs": "..." }| -| -|
-
+## Структура ключевых полей
+|Поле	|Тип	|Описание	|Ограничения / примечания|
+| --- | --- | --- | --- |
+|id|	integer	|Уникальный идентификатор комментария	|Только положительные целые числа|
+|postId|	integer	|ID поста, к которому относится комментарий	Внешний ключ; связь «многие к одному» (у поста много комментариев)|
+|name	|string|	Имя автора комментария	До 100 символов (по соглашению)|
+|email	|string	|Email автора|	Формат email; может использоваться для уведомлений|
+|body	|string	|Текст комментария|	До 2000 символов; поддерживает переносы строк|
