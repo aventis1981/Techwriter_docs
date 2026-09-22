@@ -9,6 +9,7 @@
     - API Descriptions:     
       - API GET/users: api_1.md
       - API GET/comments: api_2.md
+      - API POST/objects: api_3.md
  copyright:
   (c) AVENTIS 2026
   
