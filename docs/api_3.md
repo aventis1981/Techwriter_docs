@@ -4,12 +4,15 @@
 
 ---
 
+> **Важно:** Базовый URL вынесен в Postman-Environment как переменная `{{base_url}}`.  
+> Пример значения: `https://api.restful-api.dev`.
+
 ## Описание запроса
 
 | Параметр | Значение |
 | --- | --- |
 | **Метод** | `POST` |
-| **URL** | `https://api.restful-api.dev/objects` |
+| **URL** | `{{base_url}}/objects`|
 | **Аутентификация** | Не требуется |
 | **Тип контента (Content-Type)** | `application/json` |
 | **Формат ответа** | JSON с новым объектом |
@@ -37,21 +40,22 @@ curl -X POST https://api.restful-api.dev/objects \
 
 ```jsonc
 {
-  "name": "new name",              // обязательное
-  "data": {                          // объект с деталями
-    "title": "new object",           // обязательное
-    "body": "this is a text for object's body",      // обязательное
-    "userId": 1                      // обязательное, integer
+  "name": "new name",             
+  "data": {                          
+    "title": "new object",           
+    "body": "this is a text for object's body",     
+    "userId": 1                     
   }
 }
 ```
 
-|Поле	|Тип	|Обязательность	|Примечания|
-| --- | --- | --- | --- |
-|name	|string|	да |  не пустой. Ярлык/имя объекта для поиска, фильтрации и отображения в списках. Должно быть коротким и понятным.   |
-|data.title	|string|	да |  не пустой. Содержательный заголовок объекта. Может быть длиннее, используется как основной заголовок при просмотре карточки.  |
-|data.body	|string|	да |  не пустой   |
-|data.userId	|integer	|да| Должен быть валидным ID пользователя  |
+|Поле	|Тип	|Обязательность	|Примечания| Пример |
+| --- | --- | --- | --- |  --- |
+|name	|string|	да |  Ярлык/имя объекта для поиска, фильтрации и отображения в списках. Должно быть коротким и понятным.   | "name" |
+|data	|object|	да |  Контейнер с основными данными объекта.   | { "title": "title1", "body": "text1", "userId": 2 } |
+|data.title	|string|	да  (внутри data)|  Содержательный заголовок объекта. Может быть длиннее, используется как основной заголовок при просмотре карточки.  |"new object2" |
+|data.body	|string|	да (внутри data)|  Основное текстовое содержимое. |      "body": "this is a text for object's body" |
+|data.userId	|integer	|да (внутри data)| Должен быть валидным ID пользователя, которому принадлежит объект |
 
 
 ## Коды ответов и поведение
@@ -79,7 +83,7 @@ curl -X POST https://api.restful-api.dev/objects \
 | --- | --- | --- | --- |
 |id|	string	|Уникальный идентификатор созданного объекта	|Генерируется  системой|
 |name	|string|	Ярлык/имя объекта для поиска, фильтрации и отображения в списках |Не пустой|
-|createdAt	|integer (timestamp)	|Время создания объекта (в мс)|	UTC, Unix timestamp|
+|createdAt	|integer (Unix timestamp in milliseconds)	|Время создания объекта (в мс)|	UTC, Unix timestamp|
 |data.title	|string|Заголовок объекта|Как передано в запросе|
 |data.body	|string|Текст содержимого объекта|Как передано в запросе|
 |data.userId	|integer|ID пользователя, связанного с объектом|Как передано в запросе|
