@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../index_3/">
+        <link rel="prev" href="../api_4/">
       
       
-        <link rel="next" href="../api_2/">
+        <link rel="next" href="../api_3/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>GET /users - My work experience</title>
+        <title>GET /objects{id} - My work experience</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#api-getobjects" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GET /users
+              GET /objects{id}
             
           </span>
         </div>
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../api_1/" class="md-tabs__link">
           
   
   
@@ -470,323 +470,10 @@
                 
   
   
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSONPlaceholder
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    JSONPlaceholder
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GET /users
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GET /users
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request examples
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get-all-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Get all users
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-one-user-by-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Get one user by ID
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supported Formats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-example-postman-curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request example (Postman / cURL)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request example (Postman / cURL)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#postman" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Postman
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cURL
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#successful-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successful response
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responce-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responce codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GET /comments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     
     
-      
-        
       
         
       
@@ -810,14 +497,14 @@
   
   
   
-    <a href="../api_4/" class="md-nav__link">
+    <a href="../api_1/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     
   
-    RESTful API
+    JSONPlaceholder
   
 
     
@@ -831,6 +518,307 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RESTful API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /objects list
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /objects{id}
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /objects{id}
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание запроса
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание запроса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Примеры запросов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры запросов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cURL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Коды ответов и поведение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Формат успешного ответа (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура ключевых полей
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ограничения и особенности (демо-API)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связанные эндпоинты
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -892,7 +880,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../api_1/" class="md-path__link">
           
   <span class="md-ellipsis">
     API Documentation
@@ -913,10 +901,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../api_4/" class="md-path__link">
           
   <span class="md-ellipsis">
-    JSONPlaceholder
+    RESTful API
   </span>
 
         </a>
@@ -935,259 +923,139 @@
 
 
 
-  <h1>GET /users</h1>
-
-<h4 id="api-reference">API reference</h4>
-<p>GET/users</p>
-<p>This API returns the whole list of users in system.</p>
+<h1 id="api-getobjects">API: Получение списка объектов (<code>GET/objects</code>)</h1>
+<p>Ресурс для получения списка объектов.</p>
+<hr />
 <blockquote>
-<p><strong>Important:</strong> API does not support the filtration by fields (name, email, address ect). To get a user send <code>GET /users/{id}</code>.</p>
+<p><strong>Важно:</strong> Базовый URL вынесен в Postman-Environment как переменная <code>{{base_url}}</code>.<br />
+Пример значения: <code>https://api.restful-api.dev</code>.</p>
 </blockquote>
-<h4 id="request-parameters">Request parameters</h4>
+<h2 id="_1">Описание запроса</h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Value</th>
+<th>Параметр</th>
+<th>Значение</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Method</strong></td>
+<td><strong>Метод</strong></td>
 <td><code>GET</code></td>
 </tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://jsonplaceholder.typicode.com/users</code></td>
+<td><code>{{base_url}}/objects</code></td>
 </tr>
 <tr>
-<td><strong>Authentication</strong></td>
-<td>-</td>
+<td><strong>Аутентификация</strong></td>
+<td>Не требуется</td>
 </tr>
 <tr>
-<td><strong>Content type (header)</strong></td>
-<td><code>Accept: application/json</code></td>
+<td><strong>Тип контента (Content-Type)</strong></td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td><strong>Формат ответа</strong></td>
+<td>JSON со списком объектов</td>
 </tr>
 </tbody>
 </table>
-<h4 id="request-examples">Request examples</h4>
-<h5 id="get-all-users">Get all users</h5>
-<p>GET https://jsonplaceholder.typicode.com/users</p>
-<h5 id="get-one-user-by-id">Get one user by ID</h5>
-<p>GET https://jsonplaceholder.typicode.com/users/3</p>
-<table>
-  <!-- Шапка таблицы: названия колонок -->
-  <thead>
-    <tr>
-      <th>Parameter</th>                 <!-- Колонка 1: название режима -->
-      <th>Type</th>     <!-- Колонка 2: подробности -->
-      <th>Obligatory</th>     
-      <th>Description</th>     
-    </tr>
-  </thead>
-  <!-- Тело таблицы: строки с данными -->
-  <tbody>
-    <!-- Строка 1 -->
-    <tr>
-      <td><strong>-<strong></td>      
-      <td><strong>-<strong></td>
-      <td><strong>-<strong></td>
-      <td>Endpoint does nor accept any parameters for filtration.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="supported-formats">Supported Formats</h4>
-<p>!!! warning "API limitation": API works <strong>with JSON only</strong>.
-    API does not support content negotiation. All <code>Accept</code> values return 
-     JSON with code <code>200</code>. This is a deviation from HTTP standard.</p>
-<table>
-<thead>
-<tr>
-<th>Request header</th>
-<th>Expected behaviour</th>
-<th>Actual behaviour</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Accept: application/json</code></td>
-<td><code>200 OK</code>, JSON</td>
-<td>✅ <code>200 OK</code>, JSON</td>
-</tr>
-<tr>
-<td><code>Accept: application/xml</code></td>
-<td><code>406 Not Acceptable</code></td>
-<td>❌ <code>200 OK</code>, JSON (standard deviation)</td>
-</tr>
-<tr>
-<td><code>Accept: */*</code></td>
-<td><code>200 OK</code>, default format</td>
-<td>✅ <code>200 OK</code>, JSON</td>
-</tr>
-</tbody>
-</table>
-<h4 id="request-example-postman-curl">Request example (Postman / cURL)</h4>
-<h5 id="postman">Postman</h5>
-<p>GET https://jsonplaceholder.typicode.com/users
-Accept: application/json</p>
-<h5 id="curl">cURL</h5>
-<p>curl -X GET \
-  https://jsonplaceholder.typicode.com/users \
-  -H "Accept: application/json"</p>
-<h4 id="successful-response">Successful response</h4>
-<ul>
-<li>
-<p>Status: 200 OK</p>
-</li>
-<li>
-<p>Content type: application/json; charset=utf-8</p>
-</li>
-<li>
-<p>Response body: array of objects -  users (10 records).</p>
-</li>
-</ul>
-<p>Example of short response:</p>
-<pre><code class="language-json">{
-  &quot;id&quot;: 1,
-  &quot;name&quot;: &quot;Leanne Graham&quot;,
-  &quot;username&quot;: &quot;Bret&quot;,
-  &quot;email&quot;: &quot;Sincere@april.biz&quot;,
-  &quot;address&quot;: {
-    &quot;street&quot;: &quot;Kulas Light&quot;,
-    &quot;suite&quot;: &quot;Apt. 556&quot;,
-    &quot;city&quot;: &quot;Gwenborough&quot;,
-    &quot;zipcode&quot;: &quot;92998-3874&quot;,
-    &quot;geo&quot;: {
-      &quot;lat&quot;: &quot;-37.3159&quot;,
-      &quot;lng&quot;: &quot;81.1496&quot;
-    }
-  },
-  &quot;phone&quot;: &quot;1-770-736-8031 x56442&quot;,
-  &quot;website&quot;: &quot;hildegard.org&quot;,
-  &quot;company&quot;: {
-    &quot;name&quot;: &quot;Romaguera-Crona&quot;,
-    &quot;catchPhrase&quot;: &quot;Multi-layered client-server neural-net&quot;,
-    &quot;bs&quot;: &quot;harness real-time e-markets&quot;
-  }
-}
+<hr />
+<h3 id="_2">Примеры запросов</h3>
+<h4 id="curl">cURL</h4>
+<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects
 </code></pre>
-<h3 id="responce-codes">Responce codes</h3>
+<h2 id="_3">Коды ответов и поведение</h2>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>State</th>
-<th>Description</th>
-<th>Action of developer</th>
+<th>Код</th>
+<th>Статус</th>
+<th>Поведение API</th>
+<th>Что документировать для разработчика</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>200</td>
 <td>OK</td>
-<td>Successful request. In responce body - array of users of empty array</td>
-<td>Process the data anf show list of users</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-<td>Ressource not found (f.e. path does not exist)</td>
-<td>Check URL, process UI error</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error</td>
-<td>Error on server site</td>
-<td>Repeat request later, inform administrator</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable</td>
-<td>Service tempporary unavailable (maintenance works)</td>
-<td>Use  retry logic with exponential delay</td>
+<td>Успех</td>
+<td>Возвращает JSON с данными объектов</td>
 </tr>
 </tbody>
 </table>
-<h3 id="data-structure">Data structure</h3>
+<h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
+<p>Это пример объектов из массива.</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;name&quot;: &quot;Google Pixel 6 Pro&quot;,
+    &quot;data&quot;: {
+      &quot;color&quot;: &quot;Cloudy White&quot;,
+      &quot;capacity&quot;: &quot;128 GB&quot;
+    }
+  },
+  {
+    &quot;id&quot;: &quot;2&quot;,
+    &quot;name&quot;: &quot;Apple iPhone 12 Mini, 256GB, Blue&quot;,
+    &quot;data&quot;: null
+  }
+]
+</code></pre>
+<h2 id="_4">Структура ключевых полей</h2>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
-<th>Validation</th>
-<th>Comment</th>
+<th>Поле</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Ограничения / примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
-<td>integer</td>
-<td>user ID</td>
-<td>1</td>
-<td>Positive integers only</td>
-<td>system generation, read-only</td>
+<td>string</td>
+<td>Уникальный идентификатор объекта</td>
+<td>Генерируется  системой</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>full name</td>
-<td>"Leanne Graham"</td>
-<td>up to 100 characters (letters, whitespace, hyphen)</td>
-<td>No validation in this API (test API)</td>
+<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках</td>
+<td></td>
 </tr>
 <tr>
-<td>username</td>
-<td>string</td>
-<td>login name</td>
-<td>"Bret"</td>
-<td>3-20 charcters; only letters, integers, underscore)</td>
-<td>No validation in this API (test API)</td>
+<td>data</td>
+<td>object или null</td>
+<td>Контейнер с произвольными полями объекта</td>
+<td>Структура не стандартизирована; может быть null</td>
 </tr>
 <tr>
-<td>email</td>
-<td>string</td>
-<td>email</td>
-<td>"Sincere@april.biz"</td>
-<td>email formatm up to 254 characters</td>
-<td>-</td>
-</tr>
-<tr>
-<td>address</td>
-<td>object</td>
-<td>embedded object with address</td>
-<td>{ "street": "...", "city": "..." }</td>
-<td>up to 100 characters, letters and whitespace only)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>phone</td>
-<td>string</td>
-<td>phone number</td>
-<td>"1-770-736-8031 x56442"</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>website</td>
-<td>string</td>
-<td>Website of user/company</td>
-<td>"hildegard.org"</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>company</td>
-<td>object</td>
-<td>Company data</td>
-<td>{ "name": "...", "bs": "..." }</td>
-<td>-</td>
-<td>-</td>
+<td><code>data.*</code></td>
+<td>varies</td>
+<td>Произвольные вложенные поля объекта</td>
+<td>Любые ключи внутри data допустимы; набор полей зависит от объекта</td>
 </tr>
 </tbody>
 </table>
+<p>Содержимое data зависит от объекта: сервер не валидирует структуру внутри data. В списке могут встречаться объекты 
+с разными наборами полей (например, <code>color</code> и <code>capacity</code> для телефонов, <code>price</code> для товаров) или с <code>data</code>: null.</p>
+<h2 id="-api">Ограничения и особенности (демо-API)</h2>
+<ul>
+<li>В списке встречаются предзагруженные объекты с <code>data</code>: null — создать такие через POST нельзя.</li>
+<li>Поле <code>id</code> всегда возвращается как строка (в кавычках): это может быть число в виде строки ("1") или UUID-строка ("ff808181...").</li>
+<li>Нет пагинации: <code>GET /objects</code> возвращает весь список одним ответом. При большом количестве объектов ответ может стать очень большим — 
+в реальных системах для этого используют пагинацию, сортировку и фильтрацию.</li>
+</ul>
+<h2 id="_5">Связанные эндпоинты</h2>
+<ul>
+<li><code>POST /objects</code> — создать объект.</li>
+<li><code>PUT /objects/{id}</code> — обновить объект.</li>
+<li><code>DELETE /objects/{id}</code> — удалить объект.</li>
+<li><code>GET /users</code> — проверить существование <code>userId</code> перед созданием объекта.</li>
+</ul>
 
 
 
