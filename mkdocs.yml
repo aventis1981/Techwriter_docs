@@ -11,6 +11,8 @@
            - GET /users: api_1.md
            - GET /comments: api_2.md
       - RESTful API:
+           - GET /objects list: api_4.md
+           - GET /objects{id}: api_5.md
            - POST /objects: api_3.md
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
