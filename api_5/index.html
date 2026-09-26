@@ -25,7 +25,7 @@
     
     
       
-        <title>GET /objects{id} - My work experience</title>
+        <title>GET /objects?id=... - My work experience</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GET /objects{id}
+              GET /objects?id=...
             
           </span>
         </div>
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../api_1/" class="md-tabs__link">
+        <a href="../api_4/" class="md-tabs__link">
           
   
   
@@ -470,64 +470,6 @@
                 
   
   
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../api_1/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSONPlaceholder
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -554,10 +496,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -575,8 +517,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -637,7 +579,7 @@
   <span class="md-ellipsis">
     
   
-    GET /objects{id}
+    GET /objects?id=...
   
 
     
@@ -655,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    GET /objects{id}
+    GET /objects?id=...
   
 
     
@@ -825,6 +767,64 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../api_1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSONPlaceholder
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -880,7 +880,7 @@
     
     
       <li class="md-path__item">
-        <a href="../api_1/" class="md-path__link">
+        <a href="../api_4/" class="md-path__link">
           
   <span class="md-ellipsis">
     API Documentation
@@ -961,8 +961,7 @@
 </tr>
 </tbody>
 </table>
-<p>Можно запросить данные одного или одновременно нескольких объектов.
-Запрос для одного объекта:</p>
+<p>Можно запросить данные одного или одновременно нескольких объектов.</p>
 <table>
 <thead>
 <tr>
@@ -1005,7 +1004,7 @@
 <th>Код</th>
 <th>Статус</th>
 <th>Поведение API</th>
-<th>Что документировать для разработчика</th>
+<th>Примечание</th>
 </tr>
 </thead>
 <tbody>
@@ -1086,7 +1085,9 @@
 <li>Если ни один из запрошенных ID не найден — возвращается 200 OK с пустым массивом [].</li>
 <li>Данные могут сбрасываться при перезапуске сервиса.</li>
 <li>В случае, если часть из запрошенных объектов существует, а другая часть - нет, сервис вернет в ответе только существующие объекты, со статусом 200 ОК.</li>
-<li>Запрос данных объектов возможен также через path параметр <code>/objects/1</code> <em>(будет описан отдельно и добавлена ссылка)</em>.</li>
+<li>Запрос данных объектов возможен также через path параметр <code>/objects/1</code> <em>(будет описан отдельно и добавлена ссылка)</em>.
+<strong>Ключевое отличие</strong>: GET /objects/{id} используется для получения одного конкретного объекта (ошибка при отсутствии), 
+а GET /objects?id=... — для выборки нескольких объектов по списку ID (пустой массив при отсутствии).</li>
 </ul>
 <h2 id="_5">Связанные эндпоинты</h2>
 <ul>
