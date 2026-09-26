@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-getobjects" class="md-skip">
+        <a href="#api-get-objectsid" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -923,8 +923,8 @@
 
 
 
-<h1 id="api-getobjects">API: Получение списка объектов (<code>GET/objects</code>)</h1>
-<p>Ресурс для получения списка объектов.</p>
+<h1 id="api-get-objectsid">API: Получение объекта  (<code>GET /objects?id=...</code>)</h1>
+<p>Ресурс для получения одного или нескольких объектов из списка.</p>
 <hr />
 <blockquote>
 <p><strong>Важно:</strong> Базовый URL вынесен в Postman-Environment как переменная <code>{{base_url}}</code>.<br />
@@ -945,26 +945,58 @@
 </tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects</code></td>
+<td><code>{{base_url}}/objects?id={id}</code></td>
 </tr>
 <tr>
 <td><strong>Аутентификация</strong></td>
 <td>Не требуется</td>
 </tr>
 <tr>
-<td><strong>Тип контента (Content-Type)</strong></td>
+<td><strong>Accept</strong></td>
 <td><code>application/json</code></td>
 </tr>
 <tr>
 <td><strong>Формат ответа</strong></td>
-<td>JSON со списком объектов</td>
+<td>JSON с данными объекта/объектов</td>
+</tr>
+</tbody>
+</table>
+<p>Можно запросить данные одного или одновременно нескольких объектов.
+Запрос для одного объекта:</p>
+<table>
+<thead>
+<tr>
+<th>Кол-во объектов</th>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 объект</td>
+<td><strong>URL</strong></td>
+<td><code>{{base_url}}/objects?id={id}</code></td>
+</tr>
+<tr>
+<td>2 объекта</td>
+<td><strong>URL</strong></td>
+<td><code>{{base_url}}/objects?id={id1}&amp;id={id2}</code></td>
+</tr>
+<tr>
+<td>3 объекта</td>
+<td><strong>URL</strong></td>
+<td><code>{{base_url}}/objects?id={id1}&amp;id={id2}&amp;id={id3}</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="_2">Примеры запросов</h3>
 <h4 id="curl">cURL</h4>
-<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects
+<p>Запрос для одного объекта (id=1):</p>
+<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1
+</code></pre>
+<p>Запрос для 2 объектов (id=1, id=ff808181a09d98f701a0ce34e2487b39):</p>
+<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1&amp;id=ff808181a09d98f701a0ce34e2487b39
 </code></pre>
 <h2 id="_3">Коды ответов и поведение</h2>
 <table>
@@ -981,26 +1013,30 @@
 <td>200</td>
 <td>OK</td>
 <td>Успех</td>
-<td>Возвращает JSON с данными объектов</td>
+<td>Возвращает JSON с данными объектов.  В случае, если id объекта не найден, сервис возвращает пустой массив.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
-<p>Это пример объектов из массива.</p>
+<p>Пример ответа для запроса двух объектов:</p>
 <pre><code class="language-json">[
-  {
-    &quot;id&quot;: &quot;1&quot;,
-    &quot;name&quot;: &quot;Google Pixel 6 Pro&quot;,
-    &quot;data&quot;: {
-      &quot;color&quot;: &quot;Cloudy White&quot;,
-      &quot;capacity&quot;: &quot;128 GB&quot;
+    {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;name&quot;: &quot;Google Pixel 6 Pro&quot;,
+        &quot;data&quot;: {
+            &quot;color&quot;: &quot;Cloudy White&quot;,
+            &quot;capacity&quot;: &quot;128 GB&quot;
+        }
+    },
+    {
+        &quot;id&quot;: &quot;ff808181a09d98f701a0ce34e2487b39&quot;,
+        &quot;name&quot;: &quot;name&quot;,
+        &quot;data&quot;: {
+            &quot;title&quot;: &quot;new object2&quot;,
+            &quot;body&quot;: &quot;this is a text for object's body2&quot;,
+            &quot;userId&quot;: 2
+        }
     }
-  },
-  {
-    &quot;id&quot;: &quot;2&quot;,
-    &quot;name&quot;: &quot;Apple iPhone 12 Mini, 256GB, Blue&quot;,
-    &quot;data&quot;: null
-  }
 ]
 </code></pre>
 <h2 id="_4">Структура ключевых полей</h2>
@@ -1041,20 +1077,23 @@
 </tbody>
 </table>
 <p>Содержимое data зависит от объекта: сервер не валидирует структуру внутри data. В списке могут встречаться объекты 
-с разными наборами полей (например, <code>color</code> и <code>capacity</code> для телефонов, <code>price</code> для товаров) или с <code>data</code>: null.</p>
+с разными наборами полей (например, <code>color</code> и <code>capacity</code> для телефонов, <code>price</code> для товаров) или с <code>data: null</code>.</p>
 <h2 id="-api">Ограничения и особенности (демо-API)</h2>
 <ul>
-<li>В списке встречаются предзагруженные объекты с <code>data</code>: null — создать такие через POST нельзя.</li>
+<li>ID передаётся через query-параметр id. Для запроса нескольких объектов параметр повторяется: <code>?id=1&amp;id=2</code>.</li>
 <li>Поле <code>id</code> всегда возвращается как строка (в кавычках): это может быть число в виде строки ("1") или UUID-строка ("ff808181...").</li>
-<li>Нет пагинации: <code>GET /objects</code> возвращает весь список одним ответом. При большом количестве объектов ответ может стать очень большим — 
-в реальных системах для этого используют пагинацию, сортировку и фильтрацию.</li>
+<li>Ответ всегда приходит в виде массива, даже если запрошен один объект.</li>
+<li>Если ни один из запрошенных ID не найден — возвращается 200 OK с пустым массивом [].</li>
+<li>Данные могут сбрасываться при перезапуске сервиса.</li>
+<li>В случае, если часть из запрошенных объектов существует, а другая часть - нет, сервис вернет в ответе только существующие объекты, со статусом 200 ОК.</li>
+<li>Запрос данных объектов возможен также через path параметр <code>/objects/1</code> <em>(будет описан отдельно и добавлена ссылка)</em>.</li>
 </ul>
 <h2 id="_5">Связанные эндпоинты</h2>
 <ul>
+<li><code>GET /objects</code> — получить список объектов.</li>
 <li><code>POST /objects</code> — создать объект.</li>
 <li><code>PUT /objects/{id}</code> — обновить объект.</li>
 <li><code>DELETE /objects/{id}</code> — удалить объект.</li>
-<li><code>GET /users</code> — проверить существование <code>userId</code> перед созданием объекта.</li>
 </ul>
 
 
