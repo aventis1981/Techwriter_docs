@@ -10,6 +10,7 @@
       - RESTful API:
            - GET /objects list: api_4.md
            - GET /objects?id=...: api_5.md
+           - GET /objects/{id}: api_6.md
            - POST /objects: api_3.md
       - JSONPlaceholder:
            - GET /users: api_1.md
