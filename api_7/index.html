@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../api_6/">
+        <link rel="prev" href="../api_3/">
       
       
-        <link rel="next" href="../api_7/">
+        <link rel="next" href="../api_1/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>POST /objects - My work experience</title>
+        <title>PUT /objects - My work experience</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-post-objects" class="md-skip">
+        <a href="#api-put-objectsid" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              POST /objects
+              PUT /objects
             
           </span>
         </div>
@@ -620,6 +620,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -639,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    POST /objects
+    PUT /objects
   
 
     
@@ -657,7 +685,7 @@
   <span class="md-ellipsis">
     
   
-    POST /objects
+    PUT /objects
   
 
     
@@ -733,6 +761,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Примеры допустимых значений для вложенных полей (data.*)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -754,6 +793,17 @@
     <span class="md-ellipsis">
       
         Формат успешного ответа (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#400-bad-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример ответа при ошибке 400 (Bad Request)
       
     </span>
   </a>
@@ -797,34 +847,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PUT /objects
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -994,8 +1016,9 @@
 
 
 
-<h1 id="api-post-objects">API: Создание нового объекта (<code>POST /objects</code>)</h1>
-<p>Ресурс для создания нового объекта.</p>
+<h1 id="api-put-objectsid">API: Полное обновление объекта  (<code>PUT /objects/{id}</code>)</h1>
+<p>Ресурс для полного обновления объекта.
+Метод идемпотентен: повторная отправка того же запроса даёт тот же результат.</p>
 <hr />
 <blockquote>
 <p><strong>Важно:</strong> Базовый URL вынесен в Postman-Environment как переменная <code>{{base_url}}</code>.<br />
@@ -1012,46 +1035,55 @@
 <tbody>
 <tr>
 <td><strong>Метод</strong></td>
-<td><code>POST</code></td>
+<td><code>PUT</code></td>
 </tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects</code></td>
+<td><code>{{base_url}}/objects/{id}</code></td>
 </tr>
 <tr>
 <td><strong>Аутентификация</strong></td>
 <td>Не требуется</td>
 </tr>
 <tr>
-<td><strong>Тип контента (Content-Type)</strong></td>
+<td><strong>Accept</strong></td>
 <td><code>application/json</code></td>
 </tr>
 <tr>
+<td><strong>Content-Type</strong></td>
+<td>application/json</td>
+</tr>
+<tr>
 <td><strong>Формат ответа</strong></td>
-<td>JSON с новым объектом</td>
+<td>JSON с обновленными данными объекта</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>Content-Type указывает формат тела запроса; Accept — ожидаемый формат ответа. </p>
+</blockquote>
+<p>В Postman использовать: {{base_url}}/objects/{{id}}
+где {{id}} — уникальный идентификатор объекта, существующего в системе (переменная окружения или коллекции)</p>
 <hr />
 <h3 id="_2">Примеры запросов</h3>
 <h4 id="curl">cURL</h4>
-<pre><code class="language-bash">curl -X POST https://api.restful-api.dev/objects \
+<pre><code class="language-bash">curl -X PUT https://api.restful-api.dev/objects/1 \
   -H &quot;Content-Type: application/json&quot; \
   -d '{
-    &quot;name&quot;: &quot;new name&quot;,
+    &quot;name&quot;: &quot;name updated&quot;,
     &quot;data&quot;: {
-      &quot;title&quot;: &quot;new object&quot;,
-      &quot;body&quot;: &quot;this is a text for object's body&quot;,
+      &quot;title&quot;: &quot;title updated&quot;,
+      &quot;body&quot;: &quot;this is a text for updated object's body&quot;,
       &quot;userId&quot;: 1
     }
   }'
 </code></pre>
 <h4 id="json">JSON</h4>
 <pre><code class="language-jsonc">{
-  &quot;name&quot;: &quot;new name&quot;,             
+  &quot;name&quot;: &quot;name-updated&quot;,             
   &quot;data&quot;: {                          
-    &quot;title&quot;: &quot;new object&quot;,           
-    &quot;body&quot;: &quot;this is a text for object's body&quot;,     
+    &quot;title&quot;: &quot;title updated&quot;,           
+    &quot;body&quot;: &quot;this is a text for updated object's body&quot;,     
     &quot;userId&quot;: 1                     
   }
 }
@@ -1063,7 +1095,6 @@
 <th>Тип</th>
 <th>Обязательность</th>
 <th>Примечания</th>
-<th>Пример</th>
 </tr>
 </thead>
 <tbody>
@@ -1071,43 +1102,29 @@
 <td>name</td>
 <td>string</td>
 <td>да</td>
-<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках. Должно быть коротким и понятным.</td>
-<td>"name"</td>
+<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках.</td>
 </tr>
 <tr>
 <td>data</td>
-<td>object</td>
-<td>да</td>
-<td>Контейнер с основными данными объекта.</td>
-<td>{ "title": "title1", "body": "text1", "userId": 2 }</td>
+<td>object или null</td>
+<td>нет</td>
+<td>Контейнер с произвольными полями объекта</td>
 </tr>
 <tr>
-<td>data.title</td>
-<td>string</td>
-<td>нет  (внутри data)</td>
-<td>Содержательный заголовок объекта. Может быть длиннее, используется как основной заголовок при просмотре карточки.</td>
-<td>"new object2"</td>
-</tr>
-<tr>
-<td>data.body</td>
-<td>string</td>
-<td>нет  (внутри data)</td>
-<td>Основное текстовое содержимое.</td>
-<td>"body": "this is a text for object's body"</td>
-</tr>
-<tr>
-<td>data.userId</td>
-<td>integer</td>
-<td>да (внутри data)</td>
-<td>Должен быть валидным ID пользователя, которому принадлежит объект</td>
-<td></td>
+<td><code>data.*</code></td>
+<td>varies</td>
+<td>нет</td>
+<td>Произвольные вложенные поля объекта</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>Важно:</strong> Поле data — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в data есть неожиданные поля, и не требует строго фиксированного набора полей.
-Это поведение характерно для демо-API. В продакшн-системах обычно действует строгая схема валидации: разрешены только заранее определённые поля, а лишние приводят к ошибке 400.</p>
-</blockquote>
+<h3 id="data">Примеры допустимых значений для вложенных полей (<code>data.*</code>)</h3>
+<p><code>data</code> — контейнер с произвольными полями. Вложенные поля (data.*) могут иметь любой тип и набор ключей. 
+Сервер не валидирует структуру внутри data.
+- <code>"red"</code>
+- <code>123</code>
+- <code>true</code>
+- <code>{"nested": "value"}</code></p>
 <h2 id="_3">Коды ответов и поведение</h2>
 <table>
 <thead>
@@ -1123,7 +1140,7 @@
 <td>200</td>
 <td>OK</td>
 <td>Успех</td>
-<td>Возвращает JSON с данными нового объекта</td>
+<td>Возвращает JSON с обновленными данными объекта</td>
 </tr>
 <tr>
 <td>400</td>
@@ -1131,20 +1148,37 @@
 <td>Ошибка в запросе</td>
 <td>Возвращает  "error": "Invalid request body"</td>
 </tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Объект не найден</td>
+<td>Возвращает  "error": "The Object with id = 9999999 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that."</td>
+</tr>
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
+<p>Пример ответа для объекта с id=ff808181a09d98f701a0e8e0d40736b3:</p>
 <pre><code class="language-json">{
-    &quot;id&quot;: &quot;ff808181a09d98f701a0c97c851d6f4a&quot;,
-    &quot;name&quot;: &quot;for deletion&quot;,
-    &quot;createdAt&quot;: 1790086776093,
+    &quot;id&quot;: &quot;ff808181a09d98f701a0e8e0d40736b3&quot;,
+    &quot;name&quot;: &quot;object for PUT-1 updated&quot;,
+    &quot;updatedAt&quot;: 1790613719615,
     &quot;data&quot;: {
-        &quot;title&quot;: &quot;deletion&quot;,
-        &quot;body&quot;: &quot;deletion&quot;,
-        &quot;userId&quot;: 5
+        &quot;title&quot;: &quot;object for PUT-1&quot;,
+        &quot;body&quot;: &quot;object for PUT-1&quot;,
+        &quot;userId&quot;: 1
     }
 }
 </code></pre>
+<h2 id="400-bad-request">Пример ответа при ошибке 400 (Bad Request)</h2>
+<p>Если в теле запроса некорректный JSON или нарушена структура, сервер вернёт:</p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;Invalid request body&quot;
+}
+</code></pre>
+<blockquote>
+<p>Важно: При ошибке 400 сервер не возвращает детали о том, какое именно поле невалидно (например, «поле name слишком длинное»). 
+Клиент получает только общее сообщение Invalid request body. Для отладки рекомендуется проверять валидность JSON до отправки запроса.</p>
+</blockquote>
 <h2 id="_4">Структура ключевых полей</h2>
 <table>
 <thead>
@@ -1159,56 +1193,48 @@
 <tr>
 <td>id</td>
 <td>string</td>
-<td>Уникальный идентификатор созданного объекта</td>
-<td>Генерируется  системой</td>
+<td>Уникальный идентификатор объекта</td>
+<td>id объекта согласно запросу</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках</td>
-<td>Не пустой</td>
+<td>Ярлык/имя объекта для поиска, фильтрации и отображения</td>
+<td></td>
 </tr>
 <tr>
-<td>createdAt</td>
-<td>integer (Unix timestamp in milliseconds)</td>
-<td>Время создания объекта (в мс)</td>
-<td>UTC, Unix timestamp</td>
+<td>data</td>
+<td>object или null</td>
+<td>Контейнер с произвольными полями объекта</td>
+<td>Поля согласно запросу</td>
 </tr>
 <tr>
-<td>data.title</td>
-<td>string</td>
-<td>Заголовок объекта</td>
-<td>Как передано в запросе</td>
+<td><code>data.*</code></td>
+<td>varies</td>
+<td>Произвольные вложенные поля объекта</td>
+<td>Поля согласно запросу</td>
 </tr>
 <tr>
-<td>data.body</td>
-<td>string</td>
-<td>Текст содержимого объекта</td>
-<td>Как передано в запросе</td>
-</tr>
-<tr>
-<td>data.userId</td>
-<td>integer</td>
-<td>ID пользователя, связанного с объектом</td>
-<td>Как передано в запросе</td>
+<td>updatedAt</td>
+<td>number</td>
+<td>Метка времени обновления</td>
+<td>Возвращается сервером при PUT</td>
 </tr>
 </tbody>
 </table>
 <h2 id="-api">Ограничения и особенности (демо-API)</h2>
 <ul>
-<li>Статус-код для успешного создания — <code>200 OK</code> вместо ожидаемого <code>201 Created</code>. Это специфика демо-сервиса.</li>
-<li>Поле data — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в data есть неожиданные поля, и не требует строго фиксированного набора полей.
-Это поведение характерно для демо-API. В продакшн-системах обычно действует строгая схема валидации: разрешены только заранее определённые поля, а лишние приводят к ошибке 400.</li>
-<li>Лимиты на длину полей (<code>name</code>, <code>title</code>, <code>body</code>) не зафиксированы публично. Рекомендуется тестировать на граничных значениях.</li>
-<li>Данные не сохраняются надолго: объекты могут удаляться при сбросе сервиса.</li>
-<li>Нет rate limiting и детальных кодов ошибок: большинство проблем с валидацией приводит к <code>400 Bad Request</code>.</li>
+<li>Поле <code>id</code> всегда возвращается как строка (в кавычках): это может быть число в виде строки ("1") или UUID-строка ("ff808181...").</li>
+<li>Данные могут сбрасываться при перезапуске сервиса.</li>
 </ul>
 <h2 id="_5">Связанные эндпоинты</h2>
 <ul>
-<li><code>GET /objects</code> — получить список объектов или конкретный объект по ID.</li>
-<li><code>PUT /objects/{id}</code> — обновить объект.</li>
+<li><code>GET /objects</code> — получить список объектов.</li>
+<li><code>GET /objects/{id}</code> — получить один объект по id.</li>
+<li><code>GET /objects?id=...</code> — получить объекты по заданным параметрам.</li>
+<li><code>POST /objects</code> — создать объект.</li>
+<li><code>PATCH /objects/{id}</code> — обновить объект частично.</li>
 <li><code>DELETE /objects/{id}</code> — удалить объект.</li>
-<li><code>GET /users</code> — проверить существование <code>userId</code> перед созданием объекта.</li>
 </ul>
 
 
