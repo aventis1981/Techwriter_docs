@@ -12,6 +12,7 @@
            - GET /objects?id=...: api_5.md
            - GET /objects/{id}: api_6.md
            - POST /objects: api_3.md
+           - PUT /objects: api_7.md
       - JSONPlaceholder:
            - GET /users: api_1.md
            - GET /comments: api_2.md
