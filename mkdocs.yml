@@ -1,7 +1,7 @@
  site_name: My work experience # Название сайта
  site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
  nav: # Структура сайта
-  - Readme: index.md
+  - Readme: readme.md
   - Projects:
       - Проект 1: index_1.md
       - Проект 2: index_2.md
