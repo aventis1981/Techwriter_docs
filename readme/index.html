@@ -399,6 +399,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Статус и staged-файлы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-status-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расшифровка статусов (git status -s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -406,6 +423,17 @@
     <span class="md-ellipsis">
       
         Частые операции
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Нюансы для документации API
       
     </span>
   </a>
@@ -567,12 +595,51 @@
 
 <h1 id="git-mkdocs">Шпаргалка по Git для работы с документацией (MkDocs)</h1>
 <h2 id="_1">Быстрый цикл «правка → коммит»</h2>
-<p>```bash
-git status -s                 # Посмотреть статус: M = изменён, ?? = новый
-git add mkdocs.yml            # Добавить изменённый файл в индекс
-git add docs/api_8.md         # Добавить новый файл
-git diff --staged             # Проверить, что именно уйдёт в коммит
-git commit -m "feat: document PATCH /objects/{id}"</p>
+<table>
+<thead>
+<tr>
+<th>Команда</th>
+<th>Что делает</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status -s</code></td>
+<td>Посмотреть, что изменилось и что уже staged</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>Добавить все измененные и новые файлы</td>
+</tr>
+<tr>
+<td><code>git add mkdocs.yml</code></td>
+<td>Добавить изменённый конфиг</td>
+</tr>
+<tr>
+<td><code>git add docs/api_8.md</code></td>
+<td>Добавить новый файл документации</td>
+</tr>
+<tr>
+<td><code>git diff --staged</code></td>
+<td>Проверить, что именно уйдёт в коммит</td>
+</tr>
+<tr>
+<td><code>git commit -m "feat: document PATCH /objects/{id} with shallow merge note"</code></td>
+<td>Закоммитить проиндексированный файл с комментарием</td>
+</tr>
+<tr>
+<td><code>git commit -am "new data added"</code></td>
+<td>Добавить и закоммитить измененный файл с комментарием  (только для измененных файлов, новые не добавит!</td>
+</tr>
+<tr>
+<td><code>git push</code></td>
+<td>Отправить файл в репозиторий</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Важно: не использовать <code>git add .</code> в корне проекта — папка site/ генерируется автоматически и не должна попадать в репозиторий.</p>
+</blockquote>
 <h2 id="staged-">Статус и staged-файлы</h2>
 <table>
 <thead>
@@ -584,22 +651,27 @@ git commit -m "feat: document PATCH /objects/{id}"</p>
 </thead>
 <tbody>
 <tr>
-<td>git status -s</td>
+<td><code>git status -s</code></td>
 <td>Краткий статус</td>
 <td>M в 1-й колонке = staged; пробел + M = не staged; ?? = untracked</td>
 </tr>
 <tr>
-<td>git diff --staged</td>
+<td><code>git diff --staged</code></td>
 <td>Показать изменения, готовые к коммиту</td>
 <td>Видишь diff → есть staged‑изменения; пусто → staged пуст</td>
 </tr>
 <tr>
-<td>git ls-files --cached</td>
+<td><code>git ls-files --cached</code></td>
 <td>Список файлов в индексе</td>
 <td>Просто список файлов, которые сейчас staged</td>
 </tr>
 </tbody>
 </table>
+<h3 id="git-status-s">Расшифровка статусов (git status -s)</h3>
+<p><code>M  file.md</code> — файл изменён и уже в индексе (staged)
+<code>M file.md</code> — файл изменён, но ещё не в индексе
+<code>?? file.md</code> — файл не отслеживается (untracked), Git о нём не знает
+<code>D  file.md</code> — файл помечен на удаление из репозитория</p>
 <h2 id="_2">Частые операции</h2>
 <table>
 <thead>
@@ -612,36 +684,37 @@ git commit -m "feat: document PATCH /objects/{id}"</p>
 <tbody>
 <tr>
 <td>Добавить только изменённые (не новые)</td>
-<td>git add -u</td>
+<td><code>git add -u</code></td>
 <td>Новые файлы не трогает</td>
 </tr>
 <tr>
 <td>Добавить конкретный файл</td>
-<td>git add &lt;путь&gt;</td>
+<td><code>git add &lt;путь&gt;</code></td>
 <td>Точно контролируешь, что попадает в коммит</td>
 </tr>
 <tr>
 <td>Убрать файл из staged (оставить изменения)</td>
-<td>git restore --staged &lt;путь&gt;</td>
+<td><code>git restore --staged &lt;путь&gt;</code></td>
 <td>Например, если случайно добавил лишнее</td>
 </tr>
 <tr>
 <td>Закоммитить изменённые файлы + сообщение</td>
-<td>git commit -am "msg"</td>
+<td><code>git commit -am "msg"</code></td>
 <td>-a не добавляет новые (untracked) файлы!</td>
 </tr>
 <tr>
 <td>Посмотреть историю коммитов</td>
-<td>git log --oneline</td>
+<td><code>git log --oneline</code></td>
 <td>Удобно для проверки своих последних коммитов</td>
-</tr>
-<tr>
-<td>## README</td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
+<h2 id="api">Нюансы для документации API</h2>
+<ul>
+<li>Новые .md файлы (например, docs/api_9.md) нужно добавлять явно через git add. git commit -a их не увидит.</li>
+<li>Точность примеров: перед коммитом проверяй <code>git diff --staged</code>, чтобы не закоммитить обрезанные JSON-- примеры или опечатки в примерах cURL.</li>
+<li>Конфигурация MkDocs: изменения в <code>mkdocs.yml</code> лучше коммитить отдельно от правок в .md, чтобы было проще откатывать.</li>
+</ul>
 
 
 
