@@ -14,6 +14,7 @@
            - POST /objects: api_3.md
            - PUT /objects/{id}: api_7.md
            - PATH /objects/{id}: api_8.md
+           - DELETE /objects/{id}: api_9.md
       - JSONPlaceholder:
            - GET /users: api_1.md
            - GET /comments: api_2.md
