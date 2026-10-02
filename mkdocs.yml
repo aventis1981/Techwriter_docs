@@ -7,7 +7,9 @@
       - Проект 2: index_2.md
       - Проект 3: index_3.md
   - API Documentation:
-      - RESTful API:
+      - RESTful API - private:
+           - GET /collections: api_10.md
+      - RESTful API - public:
            - GET /objects list: api_4.md
            - GET /objects?id=...: api_5.md
            - GET /objects/{id}: api_6.md
