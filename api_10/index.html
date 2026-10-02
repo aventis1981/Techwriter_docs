@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../api_4/">
+        <link rel="prev" href="../index_3/">
       
       
-        <link rel="next" href="../api_6/">
+        <link rel="next" href="../api_4/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>GET /objects?id=... - My work experience</title>
+        <title>GET /collections - My work experience</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-get-objectsid" class="md-skip">
+        <a href="#api-get-collections" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GET /objects?id=...
+              GET /collections
             
           </span>
         </div>
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../api_10/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -472,80 +472,12 @@
                 
   
   
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../api_10/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RESTful API - private
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -562,17 +494,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    RESTful API - public
+    RESTful API - private
   
 
     
@@ -583,44 +515,16 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    RESTful API - public
+    RESTful API - private
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GET /objects list
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -645,7 +549,7 @@
   <span class="md-ellipsis">
     
   
-    GET /objects?id=...
+    GET /collections
   
 
     
@@ -663,7 +567,7 @@
   <span class="md-ellipsis">
     
   
-    GET /objects?id=...
+    GET /collections
   
 
     
@@ -689,6 +593,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#api_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -701,30 +616,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Примеры запросов
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Примеры запросов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        cURL
+        Запрос cURL
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -734,7 +632,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Коды ответов и поведение
@@ -748,7 +646,18 @@
   <a href="#200-ok" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Формат успешного ответа (200 OK)
+        Пример успешного ответа (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Условие для успешного ответа
       
     </span>
   </a>
@@ -760,17 +669,6 @@
     <span class="md-ellipsis">
       
         Структура ключевых полей
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ограничения и особенности (демо-API)
       
     </span>
   </a>
@@ -797,148 +695,76 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_6/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GET /objects/{id}
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    POST /objects
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PUT /objects/{id}
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PATH /objects/{id}
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api_9/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DELETE /objects/{id}
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../api_4/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful API - public
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1041,7 +867,7 @@
     
     
       <li class="md-path__item">
-        <a href="../api_10/" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     API Documentation
@@ -1062,10 +888,10 @@
     
     
       <li class="md-path__item">
-        <a href="../api_4/" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
-    RESTful API - public
+    RESTful API - private
   </span>
 
         </a>
@@ -1084,9 +910,8 @@
 
 
 
-<h1 id="api-get-objectsid">API: Получение объекта  (<code>GET /objects?id=...</code>)</h1>
-<p>Ресурс для получения одного или нескольких объектов.</p>
-<hr />
+<h1 id="api-get-collections">API: Просмотр коллекций  (<code>GET /collections</code>)</h1>
+<h2 id="api_key">Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.</h2>
 <blockquote>
 <p><strong>Важно:</strong> Базовый URL вынесен в Postman-Environment как переменная <code>{{base_url}}</code>.<br />
 Пример значения: <code>https://api.restful-api.dev</code>.</p>
@@ -1106,11 +931,11 @@
 </tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects?id={id}</code></td>
+<td><code>{{base_url}}/collections</code></td>
 </tr>
 <tr>
 <td><strong>Аутентификация</strong></td>
-<td>Не требуется</td>
+<td><code>api_key</code> - обязательно.  Bearer JWT - опционально (работает вместе с <code>api_key</code>, но не вместо него)</td>
 </tr>
 <tr>
 <td><strong>Accept</strong></td>
@@ -1118,54 +943,26 @@
 </tr>
 <tr>
 <td><strong>Формат ответа</strong></td>
-<td>JSON с данными объекта/объектов</td>
+<td>JSON-массив объектов <code>collection</code></td>
 </tr>
 </tbody>
 </table>
-<p>Можно запросить данные одного или одновременно нескольких объектов.</p>
-<table>
-<thead>
-<tr>
-<th>Кол-во объектов</th>
-<th>Параметр</th>
-<th>Значение</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1 объект</td>
-<td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects?id={id}</code></td>
-</tr>
-<tr>
-<td>2 объекта</td>
-<td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects?id={id1}&amp;id={id2}</code></td>
-</tr>
-<tr>
-<td>3 объекта</td>
-<td><strong>URL</strong></td>
-<td><code>{{base_url}}/objects?id={id1}&amp;id={id2}&amp;id={id3}</code></td>
-</tr>
-</tbody>
-</table>
+<blockquote>
+<p>Accept указывает ожидаемый формат ответа. Content-Type не передается - GET не имеет  тела запроса.</p>
+</blockquote>
 <hr />
-<h3 id="_2">Примеры запросов</h3>
-<h4 id="curl">cURL</h4>
-<p>Запрос для одного объекта (id=1):</p>
-<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1
+<h3 id="curl">Запрос cURL</h3>
+<pre><code class="language-bash">curl -X GET &quot;https://api.restful-api.dev/collections&quot; \
+  -H &quot;x-api-key: {{api_key}}&quot;
 </code></pre>
-<p>Запрос для 2 объектов (id=1, id=ff808181a09d98f701a0ce34e2487b39):</p>
-<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1&amp;id=ff808181a09d98f701a0ce34e2487b39
-</code></pre>
-<h2 id="_3">Коды ответов и поведение</h2>
+<h2 id="_2">Коды ответов и поведение</h2>
 <table>
 <thead>
 <tr>
 <th>Код</th>
 <th>Статус</th>
+<th>Описание</th>
 <th>Поведение API</th>
-<th>Примечание</th>
 </tr>
 </thead>
 <tbody>
@@ -1173,32 +970,53 @@
 <td>200</td>
 <td>OK</td>
 <td>Успех</td>
-<td>Возвращает JSON с данными объектов.  В случае, если id объекта не найден, сервис возвращает пустой массив.</td>
+<td>Возвращает JSON-массив объектов <code>collection</code></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Доступ запрещен (нет <code>api_key</code>)</td>
+<td>Возвращает  "error": "API key is missing. To use this API, include your API key in the 'x-api-key' header. If you don’t have one, create an account and get your API key here: https://restful-api.dev/dashboard "</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Доступ запрещен (неверный <code>api_key</code>)</td>
+<td>Возвращает "error": "Invalid API key. Please check your API key on the dashboard: https://restful-api.dev/dashboard"</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+<td>Невалидный или истёкший JWT (только при ?auth-type=jwt)</td>
+<td>Возвращает "error": "Invalid or expired JWT token."</td>
 </tr>
 </tbody>
 </table>
-<h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
-<p>Пример ответа для запроса двух объектов:</p>
+<blockquote>
+<p>Важно: для авторизации необходимо использовать <code>api_key</code>. <code>Api_key</code> пользователь получает при регистрации на сервисе <code>https://api.restful-api.dev</code>. 
+<code>Api_key</code> не имеет срока годности и служит средством аутентификации для ряда приватных методов, в том числе:
+<code>GET /collections</code>
+<code>GET /collections/{collection}/objects</code>
+Опционально <strong>вместе</strong> с <code>api_key</code> может использоваться также <code>JWT-token</code>. <code>JWT-токен</code> создается при регистрации пользователя с помощью метода <code>POST /register</code> 
+или аутентификации существующего пользователя с помощью метода <code>POST /login</code>. <code>JWT</code>-токен имеет срок годности, установленный при его запросе.</p>
+</blockquote>
+<h2 id="200-ok">Пример успешного ответа (200 OK)</h2>
+<p>Пример ответа - массив с 2 ресурсами <code>collection</code> (каждая коллекция содержит по 2 объекта):</p>
 <pre><code class="language-json">[
     {
-        &quot;id&quot;: &quot;1&quot;,
-        &quot;name&quot;: &quot;Google Pixel 6 Pro&quot;,
-        &quot;data&quot;: {
-            &quot;color&quot;: &quot;Cloudy White&quot;,
-            &quot;capacity&quot;: &quot;128 GB&quot;
-        }
+        &quot;collectionName&quot;: &quot;MyCollection1&quot;,
+        &quot;objectCount&quot;: 2
     },
     {
-        &quot;id&quot;: &quot;ff808181a09d98f701a0ce34e2487b39&quot;,
-        &quot;name&quot;: &quot;name&quot;,
-        &quot;data&quot;: {
-            &quot;title&quot;: &quot;new object2&quot;,
-            &quot;body&quot;: &quot;this is a text for object's body2&quot;,
-            &quot;userId&quot;: 2
-        }
+        &quot;collectionName&quot;: &quot;MyCollection2&quot;,
+        &quot;objectCount&quot;: 2
     }
 ]
 </code></pre>
+<h2 id="_3">Условие для успешного ответа</h2>
+<p>Коллекции с объектами будут показаны в том случае, если они были ранее созданы пользователем.
+Коллекция создается с помощью метода <code>POST /collections/{collection}/objects</code>: 
+данный метод создает объект и добавляет его в указанную коллекцию, либо одновременно создает коллекцию, если она еще не существует.</p>
 <h2 id="_4">Структура ключевых полей</h2>
 <table>
 <thead>
@@ -1206,56 +1024,25 @@
 <th>Поле</th>
 <th>Тип</th>
 <th>Описание</th>
-<th>Ограничения / примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
+<td>collectionName</td>
 <td>string</td>
-<td>Уникальный идентификатор объекта</td>
-<td>Генерируется  системой</td>
+<td>Наименование коллекции</td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
-<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках</td>
-<td></td>
-</tr>
-<tr>
-<td>data</td>
-<td>object или null</td>
-<td>Контейнер с произвольными полями объекта</td>
-<td>Структура не стандартизирована; может быть null</td>
-</tr>
-<tr>
-<td><code>data.*</code></td>
-<td>varies</td>
-<td>Произвольные вложенные поля объекта</td>
-<td>Любые ключи внутри data допустимы; набор полей зависит от объекта</td>
+<td>objectCount</td>
+<td>number</td>
+<td>Количество объектов в коллекции</td>
 </tr>
 </tbody>
 </table>
-<p>Содержимое data зависит от объекта: сервер не валидирует структуру внутри data. В списке могут встречаться объекты 
-с разными наборами полей (например, <code>color</code> и <code>capacity</code> для телефонов, <code>price</code> для товаров) или с <code>data: null</code>.</p>
-<h2 id="-api">Ограничения и особенности (демо-API)</h2>
-<ul>
-<li>ID передаётся через query-параметр id. Для запроса нескольких объектов параметр повторяется: <code>?id=1&amp;id=2</code>.</li>
-<li>Поле <code>id</code> всегда возвращается как строка (в кавычках): это может быть число в виде строки ("1") или UUID-строка ("ff808181...").</li>
-<li>Ответ всегда приходит в виде массива, даже если запрошен один объект.</li>
-<li>Если ни один из запрошенных ID не найден — возвращается 200 OK с пустым массивом [].</li>
-<li>Данные могут сбрасываться при перезапуске сервиса.</li>
-<li>В случае, если часть из запрошенных объектов существует, а другая часть - нет, сервис вернет в ответе только существующие объекты, со статусом 200 ОК.</li>
-<li>Запрос данных объектов возможен также через path параметр <code>/objects/1</code> <em>(будет описан отдельно и добавлена ссылка)</em>.
-<strong>Ключевое отличие</strong>: GET /objects/{id} используется для получения одного конкретного объекта (ошибка при отсутствии объекта), 
-а GET /objects?id=... — для выборки нескольких объектов по списку ID (пустой массив при отсутствии объекта).</li>
-</ul>
 <h2 id="_5">Связанные эндпоинты</h2>
 <ul>
-<li><code>GET /objects</code> — получить список объектов.</li>
-<li><code>POST /objects</code> — создать объект.</li>
-<li><code>PUT /objects/{id}</code> — обновить объект.</li>
-<li><code>DELETE /objects/{id}</code> — удалить объект.</li>
+<li><code>POST /collections/{collection}/objects</code> — создать объект и коллекцию.</li>
+<li><code>GET /collections/{collection}/objects</code> — получить список объектов в коллекции.</li>
 </ul>
 
 
