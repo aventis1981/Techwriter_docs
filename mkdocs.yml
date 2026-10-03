@@ -3,7 +3,6 @@
  nav: # Структура сайта
   - Readme: 
       - GIT: readme.md
-      - Errors: api_11_errors.md
   - Projects:
       - Проект 1: index_1.md
       - Проект 2: index_2.md
@@ -22,6 +21,7 @@
       - JSONPlaceholder:
            - GET /users: api_1.md
            - GET /comments: api_2.md
+      - Errors: api_11_errors.md
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
