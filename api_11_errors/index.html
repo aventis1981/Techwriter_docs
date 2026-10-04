@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../api_2/">
+        <link rel="prev" href="../api_9/">
       
       
         <link rel="next" href="../api_12_tests/">
@@ -227,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../readme/" class="md-tabs__link">
+        <a href="../readme_git/" class="md-tabs__link">
           
   
   
@@ -377,6 +377,8 @@
       
         
       
+        
+      
     
     
     
@@ -395,7 +397,7 @@
   
   
   
-    <a href="../readme/" class="md-nav__link">
+    <a href="../readme_git/" class="md-nav__link">
       
   
   
@@ -490,8 +492,6 @@
   
     
     
-      
-        
       
         
       
@@ -654,64 +654,6 @@
     
   
     RESTful API - public
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../api_1/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSONPlaceholder
   
 
     
@@ -936,49 +878,57 @@
 </thead>
 <tbody>
 <tr>
-<td>200</td>
+<td><strong>200</strong></td>
 <td>OK</td>
+<td><code>GET /objects</code></td>
 <td>Успех</td>
 <td>Возвращает JSON-массив <code>objects</code></td>
-<td>GET /objects</td>
 </tr>
 <tr>
-<td>200</td>
+<td><span style="color: #5F9ED1;"><strong><em>200</em></strong></span></td>
 <td>OK</td>
-<td>Успех</td>
-<td>Возвращает JSON с данными объекта (нестандартно, в реальном API должно быть 201)</td>
-<td>POST /objects</td>
+<td><code>POST /objects</code></td>
+<td>Объект создан</td>
+<td>Возвращает JSON с данными объекта <em>(<span style="color: #5F9ED1;">нестандартно, в реальном API должно быть 201)</span></em></td>
 </tr>
 <tr>
-<td>401</td>
+<td><strong>401</strong></td>
 <td>Unauthorized</td>
+<td><code>GET /collections</code></td>
 <td>Невалидный или истёкший JWT (только при ?auth-type=jwt)</td>
 <td>Возвращает "error": "Invalid or expired JWT token."</td>
-<td></td>
 </tr>
 <tr>
-<td>403</td>
+<td><strong>403</strong></td>
 <td>Forbidden</td>
+<td><code>GET /collections</code></td>
 <td>Доступ запрещен (нет <code>api_key</code>)</td>
 <td>Возвращает  "error": "API key is missing. To use this API, include your API key in the 'x-api-key' header. If you don’t have one, create an account and get your API key here: https://restful-api.dev/dashboard "</td>
-<td></td>
 </tr>
 <tr>
-<td>403</td>
+<td><strong>403</strong></td>
 <td>Forbidden</td>
+<td><code>GET /collections</code></td>
 <td>Доступ запрещен (неверный <code>api_key</code>)</td>
 <td>Возвращает "error": "Invalid API key. Please check your API key on the dashboard: https://restful-api.dev/dashboard"</td>
-<td></td>
 </tr>
 <tr>
-<td>409</td>
+<td><strong>405</strong></td>
+<td>Method not allowed</td>
+<td><code>POST /collections</code></td>
+<td>Метод не разрешен (<code>collection</code> создается с помощью другого метода: <code>POST/ collections/{collectionName}/objects</code>)</td>
+<td>Возвращает JSON с данными (timestamp, status, error, path)</td>
+</tr>
+<tr>
+<td><strong>409</strong></td>
 <td>Conflict</td>
-<td>Польхователь уже существует</td>
-<td>Возвращает "error": "User already exists."</td>
 <td>POST /register</td>
+<td>Пользователь уже существует</td>
+<td>Возвращает "error": "User already exists."</td>
 </tr>
 </tbody>
 </table>
+<p><button type="button" style="background-color: #4682B4; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Посмотреть пример</button></p>
 
 
 
