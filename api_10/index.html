@@ -674,17 +674,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api_key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1007,7 +996,7 @@
 
 
 <h1 id="api-get-collections">API: Просмотр коллекций  (<code>GET /collections</code>)</h1>
-<h2 id="api_key">Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.</h2>
+<p>Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.</p>
 <blockquote>
 <p><strong>Важно:</strong> Базовый URL вынесен в Postman-Environment как переменная <code>{{base_url}}</code>.<br />
 Пример значения: <code>https://api.restful-api.dev</code>.</p>
@@ -1089,12 +1078,16 @@
 </tbody>
 </table>
 <blockquote>
-<p>Важно: для авторизации необходимо использовать <code>api_key</code>. <code>Api_key</code> пользователь получает при регистрации на сервисе <code>https://api.restful-api.dev</code>. 
-<code>Api_key</code> не имеет срока годности и служит средством аутентификации для ряда приватных методов, в том числе:
-<code>GET /collections</code>
-<code>GET /collections/{collection}/objects</code>
-Опционально <strong>вместе</strong> с <code>api_key</code> может использоваться также <code>JWT-token</code>. <code>JWT-токен</code> создается при регистрации пользователя с помощью метода <code>POST /register</code> 
-или аутентификации существующего пользователя с помощью метода <code>POST /login</code>. <code>JWT</code>-токен имеет срок годности, установленный при его запросе.</p>
+<ul>
+<li>Важно: для авторизации необходимо использовать <code>api_key</code>. <code>Api_key</code> пользователь получает при регистрации на сервисе <code>https://api.restful-api.dev</code>. 
+<code>Api_key</code> не имеет срока годности и служит средством аутентификации для ряда приватных методов, в том числе:<ul>
+<li><code>GET /collections</code></li>
+<li><code>GET /collections/{collection}/objects</code></li>
+</ul>
+</li>
+<li>Опционально <strong>вместе</strong> с <code>api_key</code> может использоваться также <code>JWT-token</code>. <code>JWT-токен</code> создается при регистрации пользователя с помощью метода <code>POST /register</code> 
+или аутентификации существующего пользователя с помощью метода <code>POST /login</code>. <code>JWT</code>-токен имеет срок годности, установленный при его запросе.</li>
+</ul>
 </blockquote>
 <h2 id="200-ok">Пример успешного ответа (200 OK)</h2>
 <p>Пример ответа - массив с 2 ресурсами <code>collection</code> (каждая коллекция содержит по 2 объекта):</p>
