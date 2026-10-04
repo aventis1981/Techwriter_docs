@@ -3,7 +3,8 @@
  nav: # Структура сайта
   - О проекте: index.md
   - Readme: 
-      - GIT: readme.md
+      - GIT: readme_git.md
+      - Markdown: readme_md.md
   - Projects:
       - Проект 1: index_1.md
       - Проект 2: index_2.md
@@ -19,9 +20,6 @@
            - PUT /objects/{id}: api_7.md
            - PATH /objects/{id}: api_8.md
            - DELETE /objects/{id}: api_9.md
-      - JSONPlaceholder:
-           - GET /users: api_1.md
-           - GET /comments: api_2.md
       - Errors: api_11_errors.md
       - Tests: api_12_tests.md
  copyright: "(c) AVENTIS 2026"  
