@@ -1,7 +1,6 @@
 # API: Просмотр коллекций  (`GET /collections`)
 
 Ресурс для просмотра коллекций пользователя. Метод требует аутентификации с помощью api_key.
----
 
 > **Важно:** Базовый URL вынесен в Postman-Environment как переменная `{{base_url}}`.  
 > Пример значения: `https://api.restful-api.dev`.
@@ -35,11 +34,11 @@ curl -X GET "https://api.restful-api.dev/collections" \
 |403 |Forbidden	|Доступ запрещен (неверный `api_key`)	|Возвращает "error": "Invalid API key. Please check your API key on the dashboard: https://restful-api.dev/dashboard" |	
 |401 |Unauthorized	| Невалидный или истёкший JWT (только при ?auth-type=jwt)	|Возвращает "error": "Invalid or expired JWT token." |
 
->Важно: для авторизации необходимо использовать `api_key`. `Api_key` пользователь получает при регистрации на сервисе `https://api.restful-api.dev`. 
+>- Важно: для авторизации необходимо использовать `api_key`. `Api_key` пользователь получает при регистрации на сервисе `https://api.restful-api.dev`. 
 >`Api_key` не имеет срока годности и служит средством аутентификации для ряда приватных методов, в том числе:
->`GET /collections`
->`GET /collections/{collection}/objects`
->Опционально **вместе** с `api_key` может использоваться также `JWT-token`. `JWT-токен` создается при регистрации пользователя с помощью метода `POST /register` 
+>     - `GET /collections`
+>     - `GET /collections/{collection}/objects`
+>- Опционально **вместе** с `api_key` может использоваться также `JWT-token`. `JWT-токен` создается при регистрации пользователя с помощью метода `POST /register` 
 >или аутентификации существующего пользователя с помощью метода `POST /login`. `JWT`-токен имеет срок годности, установленный при его запросе.
 
 
