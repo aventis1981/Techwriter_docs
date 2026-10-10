@@ -1,4 +1,29 @@
 @startuml
-title Use Case: Границы системы API
-' Сюда позже добавим акторов и сценарии
+!theme bluegray
+title Use Case: API для работы с объектами (restful-api.dev)
+left to right direction
+
+actor "Клиент без авторизации" as Public_client
+actor "Клиент с авторизацией" as Private_client
+actor "Администратор" as Admin
+actor "Внешняя система" as External
+
+package "API Система" {
+    usecase "CRUD Объектов" as UC_Objects
+    usecase "Коллекции и вложенность" as UC_Collections
+    usecase "Регистрация" as UC_UserCreate
+}
+
+' Публичный клиент: только CRUD объектов (по спецификации restful-api.dev)
+Public_client --> UC_Objects : полный доступ
+
+' Авторизованный клиент: объекты + коллекции
+Private_client --> UC_Objects : полный доступ
+Private_client --> UC_Collections : управление коллекциями
+
+' Администратор: особые права
+Admin --> UC_Objects : принудительное удаление
+
+' Внешняя система
+External --> UC_Objects : синхронизация
 @enduml
