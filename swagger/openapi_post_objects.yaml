@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: Objects API from Swagger
+  version: 1.0.0
+servers:
+  - url: https://api.restful-api.dev
+    description: RESTful API
+paths:
+  /objects:
+    get:
+      summary: Получить список объектов
+      responses:
+        '200':
+          description: Список объектов успешно получен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectsList'
+              examples:
+                list-default:
+                  summary: Стандартный список
+                  value:
+                    - id: "obj_1"
+                      name: "Первый объект"
+                      data: null
+                      createdAt: 1733592000
+                    - id: "obj_2"
+                      name: null
+                      data: { "title": "Без имени" }
+                      createdAt: 1733593000
+                list-empty:
+                  summary: Пустой список (граничный случай)
+                  value: []
+    post:
+      summary: Создать объект
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectCreateRequest'
+            examples:
+              full-payload:
+                summary: Полный payload
+                value:
+                  name: "Новый объект"
+                  data:
+                    title: "Заголовок"
+                    extra: "Любые данные"
+              empty-json:
+                summary: Пустой JSON (граничный кейс)
+                value: {}
+      responses:
+        '201':
+          description: Объект успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+              examples:
+                created-with-name:
+                  summary: Объект с именем
+                  value:
+                    id: "obj_3"
+                    name: "Новый объект"
+                    data:
+                      title: "Заголовок"
+                      extra: "Любые данные"
+                    createdAt: 1733594000
+                created-null-name:
+                  summary: Объект без имени (name=null)
+                  value:
+                    id: "obj_4"
+                    name: null
+                    data: null
+                    createdAt: 1733595000
+        '400':
+          description: Некорректные данные или отсутствие обязательных полей
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        field:
+                          type: string
+                        message:
+                          type: string
+              example:
+                error: "Validation failed"
+                details:
+                  - field: "name"
+                    message: "Name cannot be empty"
+components:
+  schemas:
+    Object:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "obj_1"
+        name:
+          type: string
+          nullable: true
+          example: "Первый объект"
+        data:
+          type: object
+          nullable: true
+          example:
+            title: "Пример данных"
+        createdAt:
+          type: integer
+          format: int64
+          example: 1733592000
+      required:
+        - id
+    ObjectsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Object'
+    ObjectCreateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          example: "Новый объект"
+        data:
+          type: object
+          nullable: true
+          example:
+            title: "Заголовок"
+      required: []
