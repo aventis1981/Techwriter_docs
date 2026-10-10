@@ -1,0 +1,4 @@
+@startuml
+title ER Diagram: Модель данных
+' Сюда позже добавим таблицы и связи
+@enduml

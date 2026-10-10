@@ -1,0 +1,4 @@
+@startuml
+title Class Diagram: Основные сущности API
+' Сюда позже добавим классы, атрибуты и связи
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+title Use Case: Границы системы API
+' Сюда позже добавим акторов и сценарии
+@enduml
