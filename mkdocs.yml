@@ -22,6 +22,8 @@
            - DELETE /objects/{id}: api_9.md
       - Errors: api_11_errors.md
       - Tests: api_12_tests.md
+  - Diagrams: 
+      - Overview: diagrams.md 
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
