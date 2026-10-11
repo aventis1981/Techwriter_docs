@@ -3,27 +3,31 @@
 title Use Case: API для работы с объектами (restful-api.dev)
 left to right direction
 
-actor "Клиент без авторизации" as Public_client
-actor "Клиент с авторизацией" as Private_client
-actor "Администратор" as Admin
+actor "Пользователь с авторизацией" as Private_client
+actor "Пользователь без авторизации" as Public_client
 actor "Внешняя система" as External
 
 package "API Система" {
     usecase "CRUD Объектов" as UC_Objects
-    usecase "Коллекции и вложенность" as UC_Collections
-    usecase "Регистрация" as UC_UserCreate
+    usecase "Коллекции и вложенные объекты" as UC_Collections
+    usecase "Регистрация/логин" as UC_UserCreate
 }
 
 ' Публичный клиент: только CRUD объектов (по спецификации restful-api.dev)
 Public_client --> UC_Objects : полный доступ
 
 ' Авторизованный клиент: объекты + коллекции
+Private_client --> UC_UserCreate : регистрация пользователей
 Private_client --> UC_Objects : полный доступ
 Private_client --> UC_Collections : управление коллекциями
 
-' Администратор: особые права
-Admin --> UC_Objects : принудительное удаление
-
-' Внешняя система
-External --> UC_Objects : синхронизация
+' External — внешний потребитель данных (не синхронизация)
+External --> UC_Objects : получение данных (GET)
+note right of External
+  Внешняя система —
+  автоматизированный потребитель:
+  запрашивает данные для отображения
+  в другом сервисе.
+  Двусторонней синхронизации нет.
+end note
 @enduml
