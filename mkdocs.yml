@@ -1,7 +1,7 @@
- site_name: My work experience # Название сайта
+ site_name: My Portfolio (Business Analyst / Technical Writer) # Название сайта
  site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
  nav: # Структура сайта
-  - О проекте: index.md
+  - About site: index.md
   - Readme: 
       - GIT: readme_git.md
       - Markdown: readme_md.md
