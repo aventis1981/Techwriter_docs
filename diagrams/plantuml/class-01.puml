@@ -1,4 +1,51 @@
 @startuml
-title Class Diagram: Основные сущности API
-' Сюда позже добавим классы, атрибуты и связи
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 14
+skinparam ClassBackgroundColor White
+skinparam ClassBorderColor Black
+skinparam ClassAttributeBackgroundColor White
+skinparam ClassAttributeBorderColor Black
+skinparam linetype ortho
+
+title Class: Сущности API (restful-api.dev)
+
+class "User" as Users {
+    token: string
+    tokenType: Bearer
+    expiresIn: int
+    user: 
+        id : int
+        email: string
+        name: string
+}
+
+class "Object" as Objects {
+    id : string
+    name: string
+    data: object
+    createdAt : datetime
+}
+
+class "Collection" as Collection {
+    <<PK>> id : int
+    <<FK>> object_id : int
+    <<FK>> user_id : int
+    body : string
+    created_at : datetime
+}
+
+' Один пользователь может иметь 0 или больше объектов
+Users "1" -- "0..*" Objects : владеет / создаёт
+
+' Один пользователь может иметь 0 или больше коллекций
+Users "1" -- "0..*" Collection : владеет / создаёт
+
+' Композиция: коллекция существует только при наличии объектов
+Objects *-- "1..*" Collection : содержит в составе коллекции
+
+note left of Objects
+  Обязательные поля:
+  - id (PK)
+  - name
+end note
 @enduml
