@@ -1321,6 +1321,7 @@
   }'
 </code></pre>
 <h4 id="json">JSON</h4>
+<p>Запрос с <code>data</code>:</p>
 <pre><code class="language-jsonc">{
   &quot;name&quot;: &quot;new name&quot;,             
   &quot;data&quot;: {                          
@@ -1328,6 +1329,11 @@
     &quot;body&quot;: &quot;this is a text for object's body&quot;,     
     &quot;userId&quot;: 1                     
   }
+}
+</code></pre>
+<p>Запрос без <code>data</code>:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;new name 1&quot;
 }
 </code></pre>
 <table>
@@ -1351,7 +1357,7 @@
 <tr>
 <td>data</td>
 <td>object</td>
-<td>да</td>
+<td>нет</td>
 <td>Контейнер с основными данными объекта.</td>
 <td>{ "title": "title1", "body": "text1", "userId": 2 }</td>
 </tr>
@@ -1371,16 +1377,17 @@
 </tr>
 <tr>
 <td>data.userId</td>
-<td>integer</td>
-<td>да (внутри data)</td>
-<td>Должен быть валидным ID пользователя, которому принадлежит объект</td>
+<td>string</td>
+<td>нет (внутри data)</td>
+<td>id пользователя, которому принадлежит объект. Валидация отсутствует, может быть любым</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Важно:</strong> Поле data — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в data есть неожиданные поля, и не требует строго фиксированного набора полей.
-Это поведение характерно для демо-API. В продакшн-системах обычно действует строгая схема валидации: разрешены только заранее определённые поля, а лишние приводят к ошибке 400.</p>
+<p><strong>Важно:</strong> Поле <code>data</code> — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в <code>data</code> есть неожиданные поля, и не требует строго фиксированного набора полей.
+Это поведение характерно для демо-API. 
+При отсутствии поля <code>data</code> в запросе сервер вернет <code>data: null</code>.</p>
 </blockquote>
 <h2 id="_3">Коды ответов и поведение</h2>
 <table>
@@ -1408,15 +1415,24 @@
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
+<p>Ответ на запрос с <code>data</code>:</p>
 <pre><code class="language-json">{
     &quot;id&quot;: &quot;ff808181a09d98f701a0c97c851d6f4a&quot;,
-    &quot;name&quot;: &quot;for deletion&quot;,
+    &quot;name&quot;: &quot;new name&quot;,
     &quot;createdAt&quot;: 1790086776093,
     &quot;data&quot;: {
-        &quot;title&quot;: &quot;deletion&quot;,
-        &quot;body&quot;: &quot;deletion&quot;,
-        &quot;userId&quot;: 5
+        &quot;title&quot;: &quot;new object&quot;,
+        &quot;body&quot;: &quot;this is a text for object's body&quot;,
+        &quot;userId&quot;: 1
     }
+}
+</code></pre>
+<p>Ответ на запрос без <code>data</code>:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;ff808181a09d98f701a12b569ca13d81&quot;,
+    &quot;name&quot;: &quot;new name 1&quot;,
+    &quot;createdAt&quot;: 1791728458914,
+    &quot;data&quot;: null
 }
 </code></pre>
 <h2 id="_4">Структура ключевых полей</h2>
@@ -1462,7 +1478,7 @@
 </tr>
 <tr>
 <td>data.userId</td>
-<td>integer</td>
+<td>string</td>
 <td>ID пользователя, связанного с объектом</td>
 <td>Как передано в запросе</td>
 </tr>
@@ -1471,8 +1487,6 @@
 <h2 id="-api">Ограничения и особенности (демо-API)</h2>
 <ul>
 <li>Статус-код для успешного создания — <code>200 OK</code> вместо ожидаемого <code>201 Created</code>. Это специфика демо-сервиса.</li>
-<li>Поле data — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в data есть неожиданные поля, и не требует строго фиксированного набора полей.
-Это поведение характерно для демо-API. В продакшн-системах обычно действует строгая схема валидации: разрешены только заранее определённые поля, а лишние приводят к ошибке 400.</li>
 <li>Лимиты на длину полей (<code>name</code>, <code>title</code>, <code>body</code>) не зафиксированы публично. Рекомендуется тестировать на граничных значениях.</li>
 <li>Данные не сохраняются надолго: объекты могут удаляться при сбросе сервиса.</li>
 <li>Нет rate limiting и детальных кодов ошибок: большинство проблем с валидацией приводит к <code>400 Bad Request</code>.</li>
@@ -1482,7 +1496,6 @@
 <li><code>GET /objects</code> — получить список объектов или конкретный объект по ID.</li>
 <li><code>PUT /objects/{id}</code> — обновить объект.</li>
 <li><code>DELETE /objects/{id}</code> — удалить объект.</li>
-<li><code>GET /users</code> — проверить существование <code>userId</code> перед созданием объекта.</li>
 </ul>
 
 
