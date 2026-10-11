@@ -13,3 +13,12 @@
 ![Use Case: API Objects](diagrams/images_diagrams/uc_01_api_objects.png)
 
 *Исходный код этой диаграммы: [uc-01.puml](diagrams/plantuml/uc-01.puml)*
+
+## Class: 
+
+Диаграмма классов отражает контракт API (какие поля приходят в JSON), а не внутреннюю реализацию БД.
+Подходит для: описания эндпоинтов, привязки к тестам (P1.1, N1), примеров в Postman.
+
+![Class: API Objects](diagrams/images_diagrams/class_01_api_objects.png)
+
+*Исходный код этой диаграммы: [class-01.puml](diagrams/plantuml/class-01.puml)*
