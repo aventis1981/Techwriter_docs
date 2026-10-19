@@ -1,4 +1,56 @@
 @startuml
-title Sequence: Основной поток API-запроса
-' Сюда позже добавим участников и шаги
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 14
+skinparam sequenceParticipantType rectangle
+skinparam sequenceLifeLineBorderColor Black
+skinparam linetype ortho
+
+title Sequence: Создание объекта и неявное создание коллекции
+
+actor "Авторизованный клиент (Postman)" as Client
+participant "API Service" as API
+database "Хранилище объектов/коллекций" as DB
+
+autonumber 1
+
+Client -> API: POST /collections/{collectionName}/objects\nAuthorization: Bearer <token>\n{name: "Demo", data: {...}}
+activate API
+API -> DB: 1) Проверить существование коллекции\n2) Если нет — создать коллекцию\n3) Создать объект и привязать к коллекции
+activate DB
+DB --> API: Подтверждение: collection_id, object_id
+deactivate DB
+API --> Client: 201 Created\n{id: "obj-123", name: "Demo", collectionId: "col-456"}
+deactivate API
+
+note right of API
+  Ключевое поведение:
+  - Коллекция создаётся неявно при первом объекте.
+  - Отдельного POST /collections нет.
+  Это проверено в тесте B1 (граничный случай).
+end note
+
+alt Удаление последнего объекта из коллекции
+  Client -> API: DELETE /objects/{objectId}
+  activate API
+  API -> DB: Удалить объект; проверить количество объектов в коллекции
+  activate DB
+  DB --> API: Объект удалён. В коллекции 0 объектов.
+  deactivate DB
+  API --> Client: 204 No Content
+  deactivate API
+  
+  note right of DB
+    Автоматически удалить коллекцию,
+    если в ней не осталось объектов.
+  end note
+else Удаление не последнего объекта
+  Client -> API: DELETE /objects/{objectId}
+  activate API
+  API -> DB: Удалить объект
+  activate DB
+  DB --> API: Объект удалён
+  deactivate DB
+  API --> Client: 204 No Content
+  deactivate API
+end alt
 @enduml
