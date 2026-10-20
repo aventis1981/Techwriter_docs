@@ -23,7 +23,11 @@
 
 *Исходный код этой диаграммы: [class-01.puml](diagrams/plantuml/class-01.puml)*
 
-## Диаграмма последовательности
+
+## Диаграммы последовательности
+
+
+### Создание объекта
 
 Диаграмма показывает поведение API  при создании объекта через эндпоинт POST /collections/{name}/objects.
 Ключевые моменты для тестов и интеграции:
@@ -35,3 +39,16 @@
 ![Sequence: API Objects](diagrams/images_diagrams/seq_01_api_objects.png)
 
 *Исходный код этой диаграммы: [seq-01.puml](diagrams/plantuml/seq-01.puml)*
+
+
+### Обновление объекта (авторизованный пользователь)
+
+Для PATCH /collections/{collectionName}/objects/{objectId} используется API-ключ вместо JWT‑токена:
+
+Обязательный заголовок: X-API-Key.
+Отсутствие или невалидность ключа → 403 Forbidden (без обращения к базе данных).
+После проверки ключа API проверяет существование коллекции/объекта и права владельца.
+
+![Sequence: API Objects](diagrams/images_diagrams/seq_02_api_objects.png)
+
+*Исходный код этой диаграммы: [seq-02.puml](diagrams/plantuml/seq-02.puml)*
