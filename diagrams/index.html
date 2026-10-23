@@ -23,7 +23,7 @@
     
     
       
-        <title>Overview - My Portfolio (Business Analyst / Technical Writer)</title>
+        <title>Диаграммы - My Portfolio (Business Analyst / Technical Writer)</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Диаграммы
             
           </span>
         </div>
@@ -210,7 +210,7 @@
   
     
   
-  About site
+  О сайте
 
       </a>
     </li>
@@ -253,7 +253,7 @@
   
     
   
-  Projects
+  Проекты
 
         </a>
       </li>
@@ -282,7 +282,7 @@
   
     
   
-  API Documentation
+  Документация API
 
         </a>
       </li>
@@ -309,7 +309,7 @@
   
     
   
-  Diagrams
+  Диаграммы
 
         </a>
       </li>
@@ -371,7 +371,7 @@
   <span class="md-ellipsis">
     
   
-    About site
+    О сайте
   
 
     
@@ -481,7 +481,7 @@
   <span class="md-ellipsis">
     
   
-    Projects
+    Проекты
   
 
     
@@ -546,7 +546,7 @@
   <span class="md-ellipsis">
     
   
-    API Documentation
+    Документация API
   
 
     
@@ -606,7 +606,7 @@
   <span class="md-ellipsis">
     
   
-    Diagrams
+    Диаграммы
   
 
     
@@ -622,7 +622,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Diagrams
+    Диаграммы
   
 
           </label>
@@ -651,7 +651,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Диаграммы
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Диаграммы
   
 
     
@@ -695,10 +695,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Case: Границы системы и акторы
+        Диаграмма вариантов использования
       
     </span>
   </a>
@@ -706,7 +706,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Диаграмма классов
@@ -717,7 +717,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Диаграммы последовательности
@@ -729,7 +729,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         Создание объекта
@@ -740,7 +740,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Обновление объекта (авторизованный пользователь)
@@ -752,6 +752,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#er-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ER-диаграмма
+      
+    </span>
+  </a>
   
 </li>
       
@@ -799,7 +810,7 @@
       <a href=".." class="md-path__link">
         
   <span class="md-ellipsis">
-    About site
+    О сайте
   </span>
 
       </a>
@@ -817,7 +828,7 @@
         <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
-    Diagrams
+    Диаграммы
   </span>
 
         </a>
@@ -843,17 +854,17 @@
 <li>Исходные коды диаграмм (PlantUML <code>.puml</code>) хранятся <strong>внутри папки <code>docs/diagrams/plantuml</code></strong> специально для этого портфолио, 
 чтобы можно было быстро посмотреть код прямо на сайте. В большом проекте я бы вынесла их в корень репозитория, но здесь это удобно для демонстрации.</li>
 </ul>
-<h2 id="use-case">Use Case: Границы системы и акторы</h2>
-<p>Диаграмма показывает, кто взаимодействует с API и какие сценарии доступны.</p>
+<h2 id="_2">Диаграмма вариантов использования</h2>
+<p>Диаграмма вариантов использования (Use Case) показывает, кто взаимодействует с API и какие сценарии доступны.</p>
 <p><img alt="Use Case: API Objects" src="images_diagrams/uc_01_api_objects.png" /></p>
 <p><em>Исходный код этой диаграммы: <a href="plantuml/uc-01.puml">uc-01.puml</a></em></p>
-<h2 id="_2">Диаграмма классов</h2>
+<h2 id="_3">Диаграмма классов</h2>
 <p>Диаграмма классов отражает контракт API (какие поля приходят в JSON), а не внутреннюю реализацию БД.
 Подходит для: описания эндпоинтов, привязки к тестам (P1.1, N1), примеров в Postman.</p>
 <p><img alt="Class: API Objects" src="images_diagrams/class_01_api_objects.png" /></p>
 <p><em>Исходный код этой диаграммы: <a href="plantuml/class-01.puml">class-01.puml</a></em></p>
-<h2 id="_3">Диаграммы последовательности</h2>
-<h3 id="_4">Создание объекта</h3>
+<h2 id="_4">Диаграммы последовательности</h2>
+<h3 id="_5">Создание объекта</h3>
 <p>Диаграмма показывает поведение API  при создании объекта через эндпоинт POST /collections/{name}/objects.
 Ключевые моменты для тестов и интеграции:</p>
 <ul>
@@ -863,13 +874,26 @@
 </ul>
 <p><img alt="Sequence: API Objects" src="images_diagrams/seq_01_api_objects.png" /></p>
 <p><em>Исходный код этой диаграммы: <a href="plantuml/seq-01.puml">seq-01.puml</a></em></p>
-<h3 id="_5">Обновление объекта (авторизованный пользователь)</h3>
+<h3 id="_6">Обновление объекта (авторизованный пользователь)</h3>
 <p>Для PATCH /collections/{collectionName}/objects/{objectId} используется API-ключ вместо JWT‑токена:</p>
 <p>Обязательный заголовок: X-API-Key.
 Отсутствие или невалидность ключа → 403 Forbidden (без обращения к базе данных).
 После проверки ключа API проверяет существование коллекции/объекта и права владельца.</p>
 <p><img alt="Sequence: API Objects" src="images_diagrams/seq_02_api_objects.png" /></p>
 <p><em>Исходный код этой диаграммы: <a href="plantuml/seq-02.puml">seq-02.puml</a></em></p>
+<h2 id="er-">ER-диаграмма</h2>
+<blockquote>
+<p>ER-диаграмма (от англ. Entity-Relationship Diagram — диаграмма «сущность-связь») — это графическая схема, 
+которая наглядно показывает, какие данные есть в системе и как они связаны между собой. </p>
+<ul>
+<li>Сущность (Entity) — это «объект», про который мы храним данные. В терминах БД — это таблица (<em>collection</em>, <em>object</em>)</li>
+<li>Атрибут (Attribute) — характеристика сущности. В БД — колонка таблицы (<em>id</em>, <em>data</em>)</li>
+<li>Первичный ключ (PK, Primary Key) — уникальный идентификатор строки. Без него нельзя однозначно обратиться к записи.</li>
+<li>Внешний ключ (FK, Foreign Key) — ссылка на PK другой таблицы. Показывает связь.</li>
+<li>Связь (Relationship) — как сущности «относятся» друг к другу («одна коллекция содержит много объектов»).</li>
+<li>Кардинальность — сколько экземпляров одной сущности связано с экземпляром другой («Один ко многим» (1:N): одна коллекция → много объектов).</li>
+</ul>
+</blockquote>
 
 
 
