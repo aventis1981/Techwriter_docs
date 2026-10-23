@@ -1,15 +1,15 @@
  site_name: My Portfolio (Business Analyst / Technical Writer) # Название сайта
  site_description: My work experience in last projects # Описание сайта, добавляется в meta-теги
  nav: # Структура сайта
-  - About site: index.md
+  - О сайте: index.md
   - Readme: 
       - GIT: readme_git.md
       - Markdown: readme_md.md
-  - Projects:
+  - Проекты:
       - Проект 1: index_1.md
       - Проект 2: index_2.md
       - Проект 3: index_3.md
-  - API Documentation:
+  - Документация API:
       - RESTful API - private:
            - GET /collections: api_10.md
       - RESTful API - public:
@@ -22,8 +22,8 @@
            - DELETE /objects/{id}: api_9.md
       - Errors: api_11_errors.md
       - Tests: api_12_tests.md
-  - Diagrams: 
-      - Overview: diagrams.md 
+  - Диаграммы: 
+      - Диаграммы: diagrams.md 
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
