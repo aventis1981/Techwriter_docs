@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -856,11 +856,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Описание запроса">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметры запроса
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Параметры запроса">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Примеры запросов
@@ -886,7 +897,18 @@
   <a href="#json" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JSON
+        JSON: с данными
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON: пустой запрос (минимальный кейс)
       
     </span>
   </a>
@@ -904,7 +926,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Коды ответов и поведение
@@ -926,7 +948,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         Структура ключевых полей
@@ -948,7 +970,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         Связанные эндпоинты
@@ -1307,35 +1329,7 @@
 </tbody>
 </table>
 <hr />
-<h3 id="_2">Примеры запросов</h3>
-<h4 id="curl">cURL</h4>
-<pre><code class="language-bash">curl -X POST https://api.restful-api.dev/objects \
-  -H &quot;Content-Type: application/json&quot; \
-  -d '{
-    &quot;name&quot;: &quot;new name&quot;,
-    &quot;data&quot;: {
-      &quot;title&quot;: &quot;new object&quot;,
-      &quot;body&quot;: &quot;this is a text for object's body&quot;,
-      &quot;userId&quot;: 1
-    }
-  }'
-</code></pre>
-<h4 id="json">JSON</h4>
-<p>Запрос с <code>data</code>:</p>
-<pre><code class="language-jsonc">{
-  &quot;name&quot;: &quot;new name&quot;,             
-  &quot;data&quot;: {                          
-    &quot;title&quot;: &quot;new object&quot;,           
-    &quot;body&quot;: &quot;this is a text for object's body&quot;,     
-    &quot;userId&quot;: 1                     
-  }
-}
-</code></pre>
-<p>Запрос без <code>data</code>:</p>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;new name 1&quot;
-}
-</code></pre>
+<h2 id="_2">Параметры запроса</h2>
 <table>
 <thead>
 <tr>
@@ -1343,53 +1337,51 @@
 <th>Тип</th>
 <th>Обязательность</th>
 <th>Примечания</th>
-<th>Пример</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>name</td>
+<td><code>name</code></td>
 <td>string</td>
-<td>да</td>
-<td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках. Должно быть коротким и понятным.</td>
-<td>"name"</td>
+<td>Нет</td>
+<td>Ярлык/имя объекта для поиска и отображения. Может быть <code>null</code>.</td>
 </tr>
 <tr>
-<td>data</td>
+<td><code>data</code></td>
 <td>object</td>
-<td>нет</td>
-<td>Контейнер с основными данными объекта.</td>
-<td>{ "title": "title1", "body": "text1", "userId": 2 }</td>
-</tr>
-<tr>
-<td>data.title</td>
-<td>string</td>
-<td>нет  (внутри data)</td>
-<td>Содержательный заголовок объекта. Может быть длиннее, используется как основной заголовок при просмотре карточки.</td>
-<td>"new object2"</td>
-</tr>
-<tr>
-<td>data.body</td>
-<td>string</td>
-<td>нет  (внутри data)</td>
-<td>Основное текстовое содержимое.</td>
-<td>"body": "this is a text for object's body"</td>
-</tr>
-<tr>
-<td>data.userId</td>
-<td>string</td>
-<td>нет (внутри data)</td>
-<td>id пользователя, которому принадлежит объект. Валидация отсутствует, может быть любым</td>
-<td></td>
+<td>Нет</td>
+<td>Произвольный JSON-объект. Сервер принимает любые пары ключ-значение и не требует фиксированной структуры. При отсутствии поля возвращается <code>data: null</code>.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Важно:</strong> Поле <code>data</code> — это гибкий контейнер: API принимает в нём любые пары ключ-значение. Сервер не отклоняет запрос, если в <code>data</code> есть неожиданные поля, и не требует строго фиксированного набора полей.
-Это поведение характерно для демо-API. 
-При отсутствии поля <code>data</code> в запросе сервер вернет <code>data: null</code>.</p>
+<p><strong>Ключевое поведение:</strong> <code>data</code> — гибкий контейнер: API не валидирует внутреннюю структуру и не отклоняет неожиданные поля. Это особенность демо-API.</p>
 </blockquote>
-<h2 id="_3">Коды ответов и поведение</h2>
+<h3 id="_3">Примеры запросов</h3>
+<h4 id="curl">cURL</h4>
+<pre><code class="language-bash">curl -X POST {{base_url}}/objects \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;name&quot;: &quot;new name&quot;,
+    &quot;data&quot;: {
+      &quot;anyKey&quot;: &quot;любое значение&quot;,
+      &quot;anotherField&quot;: 123
+    }
+  }'
+</code></pre>
+<h4 id="json">JSON: с данными</h4>
+<p>Запрос с <code>data</code>:</p>
+<pre><code class="language-jsonc">{
+  &quot;name&quot;: &quot;new name&quot;,
+  &quot;data&quot;: {
+    &quot;anyKey&quot;: &quot;любое значение&quot;
+  }
+}
+</code></pre>
+<h4 id="json_1">JSON: пустой запрос (минимальный кейс)</h4>
+<pre><code class="language-json">{ }
+</code></pre>
+<h2 id="_4">Коды ответов и поведение</h2>
 <table>
 <thead>
 <tr>
@@ -1415,27 +1407,25 @@
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
-<p>Ответ на запрос с <code>data</code>:</p>
+<p>С данными:</p>
 <pre><code class="language-json">{
-    &quot;id&quot;: &quot;ff808181a09d98f701a0c97c851d6f4a&quot;,
-    &quot;name&quot;: &quot;new name&quot;,
-    &quot;createdAt&quot;: 1790086776093,
-    &quot;data&quot;: {
-        &quot;title&quot;: &quot;new object&quot;,
-        &quot;body&quot;: &quot;this is a text for object's body&quot;,
-        &quot;userId&quot;: 1
-    }
+  &quot;id&quot;: &quot;ff808181a09d98f701a0c97c851d6f4a&quot;,
+  &quot;name&quot;: &quot;new name&quot;,
+  &quot;createdAt&quot;: 1790086776093,
+  &quot;data&quot;: {
+    &quot;anyKey&quot;: &quot;любое значение&quot;
+  }
 }
 </code></pre>
-<p>Ответ на запрос без <code>data</code>:</p>
+<p>Без <code>data</code> и <code>name</code>:</p>
 <pre><code class="language-json">{
     &quot;id&quot;: &quot;ff808181a09d98f701a12b569ca13d81&quot;,
-    &quot;name&quot;: &quot;new name 1&quot;,
+    &quot;name&quot;: null,
     &quot;createdAt&quot;: 1791728458914,
     &quot;data&quot;: null
 }
 </code></pre>
-<h2 id="_4">Структура ключевых полей</h2>
+<h2 id="_5">Структура ключевых полей</h2>
 <table>
 <thead>
 <tr>
@@ -1454,9 +1444,9 @@
 </tr>
 <tr>
 <td>name</td>
-<td>string</td>
+<td>string/null</td>
 <td>Ярлык/имя объекта для поиска, фильтрации и отображения в списках</td>
-<td>Не пустой</td>
+<td>Как передано в запросе; может быть null</td>
 </tr>
 <tr>
 <td>createdAt</td>
@@ -1465,33 +1455,21 @@
 <td>UTC, Unix timestamp</td>
 </tr>
 <tr>
-<td>data.title</td>
-<td>string</td>
-<td>Заголовок объекта</td>
-<td>Как передано в запросе</td>
-</tr>
-<tr>
-<td>data.body</td>
-<td>string</td>
-<td>Текст содержимого объекта</td>
-<td>Как передано в запросе</td>
-</tr>
-<tr>
-<td>data.userId</td>
-<td>string</td>
-<td>ID пользователя, связанного с объектом</td>
-<td>Как передано в запросе</td>
+<td>data</td>
+<td>object/null</td>
+<td>Произвольные данные объекта</td>
+<td>Как передано в запросе; может быть null</td>
 </tr>
 </tbody>
 </table>
 <h2 id="-api">Ограничения и особенности (демо-API)</h2>
 <ul>
 <li>Статус-код для успешного создания — <code>200 OK</code> вместо ожидаемого <code>201 Created</code>. Это специфика демо-сервиса.</li>
-<li>Лимиты на длину полей (<code>name</code>, <code>title</code>, <code>body</code>) не зафиксированы публично. Рекомендуется тестировать на граничных значениях.</li>
+<li>Нет жёсткой схемы для data: любые ключи допустимы.</li>
 <li>Данные не сохраняются надолго: объекты могут удаляться при сбросе сервиса.</li>
 <li>Нет rate limiting и детальных кодов ошибок: большинство проблем с валидацией приводит к <code>400 Bad Request</code>.</li>
 </ul>
-<h2 id="_5">Связанные эндпоинты</h2>
+<h2 id="_6">Связанные эндпоинты</h2>
 <ul>
 <li><code>GET /objects</code> — получить список объектов или конкретный объект по ID.</li>
 <li><code>PUT /objects/{id}</code> — обновить объект.</li>
@@ -1558,10 +1536,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.code.highlight", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.prune", "announce.dismiss"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.code.highlight", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.prune", "announce.dismiss"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
