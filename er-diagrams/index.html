@@ -1,0 +1,1192 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My work experience in last projects">
+      
+      
+      
+      
+        <link rel="prev" href="../diagrams/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>ER-диаграммы (нотация) - My Portfolio (Business Analyst / Technical Writer)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#er-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="My Portfolio (Business Analyst / Technical Writer)" class="md-header__button md-logo" aria-label="My Portfolio (Business Analyst / Technical Writer)" data-md-component="logo">
+      
+  <img src="../logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Portfolio (Business Analyst / Technical Writer)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ER-диаграммы (нотация)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  О сайте
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../readme_git/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Readme
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Проекты
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api_10/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Документация API
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../diagrams/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Диаграммы
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Portfolio (Business Analyst / Technical Writer)" class="md-nav__button md-logo" aria-label="My Portfolio (Business Analyst / Technical Writer)" data-md-component="logo">
+      
+  <img src="../logo.jpg" alt="logo">
+
+    </a>
+    My Portfolio (Business Analyst / Technical Writer)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О сайте
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../readme_git/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Readme
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../index_1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проекты
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../api_10/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диаграммы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Диаграммы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диаграммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ER-диаграммы (нотация)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ER-диаграммы (нотация)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#er-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ER-диаграмма
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Многие ко многим
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 "Ноль ко многим" с обеих сторон
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Один ко многим
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Обязательная связь «один к одному или многим»
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Обязательная связь «один к одному или многим»">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Реализация связи в физической модели
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Реализация связи в физической модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблица: DEVELOPER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Важные ограничения БД
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    О сайте
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../diagrams/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Диаграммы
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>ER-диаграммы (нотация)</h1>
+
+<h2 id="er-">ER-диаграмма</h2>
+<blockquote>
+<p>ER-диаграмма (от англ. Entity-Relationship Diagram — диаграмма «сущность-связь») — это графическая схема, 
+которая наглядно показывает, какие данные есть в системе и как они связаны между собой. </p>
+<ul>
+<li>Сущность (Entity) — это «объект», про который мы храним данные. В терминах БД — это таблица (<em>collection</em>, <em>object</em>)</li>
+<li>Атрибут (Attribute) — характеристика сущности. В БД — колонка таблицы (<em>id</em>, <em>data</em>)</li>
+<li>Первичный ключ (PK, Primary Key) — уникальный идентификатор строки. Без него нельзя однозначно обратиться к записи.</li>
+<li>Внешний ключ (FK, Foreign Key) — ссылка на PK другой таблицы. Показывает связь.</li>
+<li>Связь (Relationship) — как сущности «относятся» друг к другу («одна коллекция содержит много объектов»).</li>
+<li>Кардинальность — сколько экземпляров одной сущности связано с экземпляром другой («Один ко многим» (1:N): одна коллекция → много объектов).</li>
+</ul>
+</blockquote>
+<p><strong>Сущность - Collection</strong></p>
+<ul>
+<li>id (PK) - технический ключ, используется внутри БД для связей</li>
+<li>name (unique key) - бизнес-ключ, видимый в API</li>
+<li>owner_id - владелец (важно для прав доступа)</li>
+<li>created_at - дата создания</li>
+</ul>
+<p><strong>Сущность - Object</strong></p>
+<ul>
+<li>id (PK) — уникальный идентификатор объекта</li>
+<li>collection_id (FK) - техническая связь. Гарантирует, что объект принадлежит существующей коллекции.
+API использует name для адресации, но в БД связь идёт через id. 
+ER-диаграмма показывает внутреннюю структуру (через ID), а не внешний интерфейс (через name)</li>
+<li>name - имя объекта</li>
+<li>data - произвольные данные</li>
+<li>updated_at - дате обновления</li>
+</ul>
+<blockquote>
+<p>Одна коллекция содержит множество объектов. В restful-api.dev коллекция не создаётся и не удаляется напрямую: она появляется при создании первого объекта и исчезает при удалении последнего. 
+“Автоудаление коллекции” — это бизнес-правило приложения, а не CASCADE в БД: удаление инициируется кодом API при проверке количества объектов, а не механизмом базы данных. Поэтому на ER-диаграмме это показывается как заметка, а не как тип связи.
+Каскадное удаление (ON DELETE CASCADE) — это строго «родитель удаляется → дети удаляются», а здесь обратная логика.</p>
+</blockquote>
+<h2 id="_1">Теория</h2>
+<p>Базовые «кирпичики» (что значит каждый символ)
+|| — «одна и только одна». Обязательная связь: у объекта обязательно должна быть ровно одна связанная запись.
+Пример: у каждого OBJECT обязательно есть одна COLLECTION.
+| — просто «одна». Связь есть, и она одна, но в некоторых нотациях может означать «может быть одна, а может и не быть» — в Mermaid чаще именно обязательность дают через ||.
+o — «ноль или больше». То есть связи может вообще не быть, а может быть сколько угодно.
+{ — «один или больше». Связи не может не быть — минимум одна, а дальше сколько угодно.
+Готовые комбинации (то, что реально встречается на собеседованиях)
+||--o{ (как у тебя в диаграмме) — «одна и только одна — ноль или более».
+Это «один ко многим» с обязательной связью: одна COLLECTION может иметь 0, 1, 100 объектов, но каждый OBJECT обязан принадлежать ровно одной коллекции. Это самый частый вариант.
+||--|| — «одна к одной, обе стороны обязательны».
+У каждой записи ровно одна пара, и у пары ровно одна запись. Например, у пользователя ровно один профиль, у профиля ровно один пользователь.
+o--o — «ноль или более к нулю или более».
+Связи может не быть вообще ни у кого, а может быть много у обоих. Часто используют, когда связь необязательна с обеих сторон.
+{--{ — «один или более к одному или более».
+Связь точно есть (минимум одна), и может быть много с обеих сторон — это уже «многие ко многим».</p>
+<h3 id="1">1 Многие ко многим</h3>
+<pre><code class="language-mermaid">erDiagram
+    USER ||--o{ POST : &quot;пишет&quot;
+    CATEGORY ||--o{ POST : &quot;содержит&quot;
+
+    USER {
+        id PK
+        email
+        nickname
+    }
+
+    POST {
+        id PK
+        title
+        content
+        published_at
+    }
+
+    CATEGORY {
+        id PK
+        name
+        description
+    }
+
+</code></pre>
+<p><strong>Связь USER–POST</strong>
+Это связь “один ко многим” (||--o{). Один пользователь может иметь ноль или более постов, но каждый пост 
+строго принадлежит ровно одному пользователю. Это гарантирует целостность данных: 
+пост не может существовать без автора, а автор однозначно определён через внешний ключ user_id.</p>
+<p><strong>Связь CATEGORY–POST</strong>
+Здесь тоже связь “один ко многим”. Одна категория может содержать ноль или более постов, 
+при этом каждый пост относится ровно к одной категории. Такое решение упрощает фильтрацию по 
+категориям на уровне API (например, GET /posts?category_id=...) и позволяет легко строить отчёты “посты в категории”.</p>
+<h3 id="2">2 "Ноль ко многим" с обеих сторон</h3>
+<pre><code class="language-mermaid">erDiagram
+    EMPLOYEE o--o PROJECT : &quot;участвует в&quot;
+
+    EMPLOYEE {
+        id PK
+        name
+    }
+
+    PROJECT {
+        id PK
+        title
+        status
+    }
+</code></pre>
+<blockquote>
+<p>Это связь “ноль ко многим” с обеих сторон (o--o). В рамках этой модели сотрудник может участвовать в нуле 
+или множестве проектов, а проект может включать ноль или множество сотрудников. 
+Отсутствие двойных палочек (||) означает, что связь необязательна: сотрудник может существовать в системе без привязки к проектам, а проект — без назначенных сотрудников. На практике такую модель используют на ранних этапах или для гибких ролей, 
+когда участие не является обязательным атрибутом сущности</p>
+<p>«В ER-диаграмме показана логическая связь o--o для наглядности, но в реляционной БД “многие ко многим” реализуют через связующую таблицу. 
+Так мы сохраняем нормализацию и можем хранить дополнительные атрибуты связи — например, 
+роль сотрудника в проекте или дату назначения».</p>
+</blockquote>
+<h3 id="3">3 Один ко многим</h3>
+<pre><code class="language-mermaid">erDiagram
+    CUSTOMER ||--o{ ORDER : &quot;делает&quot;
+
+    CUSTOMER {
+        id PK
+        name
+        email
+    }
+
+    ORDER {
+        id PK
+        amount
+        status
+    }
+</code></pre>
+<blockquote>
+<p>Это связь “один ко многим” (||--o{). В рамках этой модели у одного клиента может быть ноль или более заказов, 
+при этом каждый заказ обязательно принадлежит ровно одному клиенту. Обязательность со стороны заказа (двойные палочки || у CUSTOMER) 
+гарантирует целостность данных: не бывает “бесхозных” заказов без клиента. Для реализации это значит, 
+что в таблице ORDER будет внешний ключ customer_id, по которому легко получить все заказы конкретного клиента 
+(например, через GET /customers/{id}/orders) либо найти клиента по заказу</p>
+</blockquote>
+<h3 id="4">4 Обязательная связь «один к одному или многим»</h3>
+<pre><code class="language-mermaid">erDiagram
+    TEAM {
+        id PK
+        name
+    }
+
+    DEVELOPER {
+        id PK
+        name
+        email
+    }
+</code></pre>
+<p><strong>Связь:</strong> <code>TEAM ||--{ DEVELOPER : "включает"</code></p>
+<p><strong>Описание:</strong><br />
+Это связь «один ко многим» с обязательным участием с обеих сторон:
+- <strong>Со стороны TEAM (<code>||</code>)</strong>: каждая команда обязана включать <strong>одного или более</strong> разработчиков. Пустых команд в системе быть не может.
+- <strong>Со стороны DEVELOPER (<code>{</code>)</strong>: каждый разработчик обязан состоять ровно в <strong>одной</strong> команде. Работа без команды или одновременная работа в нескольких командах невозможна.</p>
+<p><strong>Целостность данных:</strong><br />
+Обязательность связи обеспечивается на уровне БД через:
+- <code>NOT NULL</code> для внешнего ключа <code>team_id</code> в таблице <code>DEVELOPER</code> (разработчик не может существовать без команды).
+- Бизнес-правило или триггер на стороне приложения: нельзя создать команду без хотя бы одного разработчика.</p>
+<p><strong>Практическое применение в API:</strong><br />
+Такая модель позволяет уверенно строить эндпоинты вида:
+- <code>GET /teams/{team_id}/developers</code> — получить всех разработчиков команды (гарантированно будет хотя бы один).
+- <code>GET /developers/{id}</code> — в ответе всегда будет поле <code>teamId</code>, которое никогда не будет <code>null</code>.</p>
+<h4 id="_2">Реализация связи в физической модели</h4>
+<p>Хотя на ER‑диаграмме внешний ключ не отображается явно, связь <code>TEAM ||--{ DEVELOPER</code> подразумевает наличие обязательного внешнего ключа в таблице <code>DEVELOPER</code>.</p>
+<h5 id="developer">Таблица: DEVELOPER</h5>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Тип</th>
+<th>Ограничения</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>PK</td>
+<td>Уникальный идентификатор разработчика</td>
+</tr>
+<tr>
+<td>name</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Имя разработчика</td>
+</tr>
+<tr>
+<td>email</td>
+<td>VARCHAR(255)</td>
+<td>UNIQUE, NOT NULL</td>
+<td>Email разработчика</td>
+</tr>
+<tr>
+<td>team_id</td>
+<td>INT</td>
+<td>NOT NULL, FK → TEAM.id</td>
+<td>Обязательная ссылка на команду. Гарантирует, что разработчик всегда принадлежит ровно одной команде</td>
+</tr>
+</tbody>
+</table>
+<h5 id="_3">Важные ограничения БД</h5>
+<ul>
+<li><code>NOT NULL</code> на <code>team_id</code>: разработчик не может существовать без команды.</li>
+<li>Внешний ключ (<code>FOREIGN KEY</code>) с каскадом <code>RESTRICT</code> или <code>NO ACTION</code>: нельзя удалить команду, пока в ней есть разработчики (это поддерживает правило «в команде должен быть хотя бы один разработчик» на уровне БД).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      (c) AVENTIS 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.code.highlight", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.prune", "announce.dismiss"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
