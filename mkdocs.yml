@@ -23,7 +23,8 @@
       - Errors: api_11_errors.md
       - Tests: api_12_tests.md
   - Диаграммы: 
-      - Диаграммы: diagrams.md 
+      - Диаграммы: diagrams.md
+      - ER-диаграммы (нотация): er-diagrams.md 
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
