@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../diagrams/">
+        <link rel="prev" href="../er_diagrams_my/">
       
       
       
@@ -582,6 +582,8 @@
       
         
       
+        
+      
     
     
     
@@ -645,6 +647,34 @@
     
   
     Диаграммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../er_diagrams_my/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ER-диаграммы
   
 
     
@@ -936,8 +966,8 @@
 </li>
 </ol>
 <h3 id="1">1 Обязательная связь "один к одному"</h3>
-<pre><code class="language-mermaid">erDiagram
-    PATIENT ||--|| MEDICAL_CARD : &quot;имеет&quot;
+<pre class="mermaid"><code>erDiagram
+    PATIENT ||--|| MEDICAL_CARD : "имеет"
 
     PATIENT {
         id 
@@ -952,8 +982,7 @@
         date_of_creation
         date_of_update
         patient_id
-    }
-</code></pre>
+    }</code></pre>
 <p><strong>Связь:</strong> <code>PATIENT ||--|| MEDICAL_CARD : "имеет"</code></p>
 <p>Это строгая связь «один к одному» с обязательностью с обеих сторон:</p>
 <ul>
@@ -1015,8 +1044,8 @@
 <p>Поле <code>patient_id</code> в таблице <code>MEDICAL_CARD</code> является обязательным внешним ключом с уникальным ограничением. Это обеспечивает строгое соответствие один к одному между сущностями <code>PATIENT</code> и <code>MEDICAL_CARD</code>. В ответах API медицинская карта всегда присутствует как вложенный объект или отдельный ресурс с гарантированным не-null идентификатором пациента. Создание пациента и его медицинской карты рекомендуется выполнять в рамках одной транзакции либо гарантировать атомарность через бизнес-логику, чтобы избежать состояния “пациент без карты”.</p>
 </blockquote>
 <h3 id="2">2 Необязательная связь "ноль ко многим" с обеих сторон</h3>
-<pre><code class="language-mermaid">erDiagram
-    EMPLOYEE o{--o{ PROJECT : &quot;участвует в&quot;
+<pre class="mermaid"><code>erDiagram
+    EMPLOYEE o{--o{ PROJECT : "участвует в"
 
     EMPLOYEE {
         id PK
@@ -1027,8 +1056,7 @@
         id PK
         title
         status
-    }
-</code></pre>
+    }</code></pre>
 <blockquote>
 <p>Это связь “ноль ко многим” с обеих сторон (o{--o{). В рамках этой модели сотрудник может участвовать в нуле 
 или множестве проектов, а проект может включать ноль или множество сотрудников. 
@@ -1036,9 +1064,9 @@
 когда участие не является обязательным атрибутом сущности.</p>
 </blockquote>
 <h3 id="4">4 Связь "Один ко многим"</h3>
-<pre><code class="language-mermaid">erDiagram
-    USER ||--o{ POST : &quot;пишет&quot;
-    CATEGORY ||--o{ POST : &quot;содержит&quot;
+<p><pre class="mermaid"><code>erDiagram
+    USER ||--o{ POST : "пишет"
+    CATEGORY ||--o{ POST : "содержит"
 
     USER {
         id PK
@@ -1058,9 +1086,8 @@
         name
         description
     }
-
 </code></pre>
-<p><strong>Связь USER–POST</strong>
+<strong>Связь USER–POST</strong>
 Это связь “один ко многим” (||--o{). Один пользователь может иметь ноль или более постов, но каждый пост 
 строго принадлежит ровно одному пользователю. Это гарантирует целостность данных: 
 пост не может существовать без автора, а автор однозначно определён через внешний ключ user_id.</p>
@@ -1068,8 +1095,8 @@
 Здесь тоже связь “один ко многим”. Одна категория может содержать ноль или более постов, 
 при этом каждый пост относится ровно к одной категории. Такое решение упрощает фильтрацию по 
 категориям на уровне API (например, GET /posts?category_id=...) и позволяет легко строить отчёты “посты в категории”.</p>
-<pre><code class="language-mermaid">erDiagram
-    CUSTOMER ||--o{ ORDER : &quot;делает&quot;
+<pre class="mermaid"><code>erDiagram
+    CUSTOMER ||--o{ ORDER : "делает"
 
     CUSTOMER {
         id PK
@@ -1082,8 +1109,7 @@
         amount
         status
         customer_id
-    }
-</code></pre>
+    }</code></pre>
 <blockquote>
 <p>Также связь “один ко многим” (<code>||--o{</code>). В рамках этой модели у одного клиента может быть ноль или более заказов, 
 при этом каждый заказ обязательно принадлежит ровно одному клиенту. 
@@ -1093,8 +1119,8 @@
 (например, через <code>GET /customers/{id}/orders</code>), либо найти клиента по заказу.</p>
 </blockquote>
 <h3 id="5">5 Обязательная связь «один к одному или многим»</h3>
-<pre><code class="language-mermaid">erDiagram
-    PROJECT ||--|{ DEVELOPER : &quot;работает в&quot;
+<pre class="mermaid"><code>erDiagram
+    PROJECT ||--|{ DEVELOPER : "работает в"
 
     PROJECT {
         id PK
@@ -1106,8 +1132,7 @@
         name
         email
         project_id
-    }
-</code></pre>
+    }</code></pre>
 <p><strong>Связь:</strong> <code>PROJECT ||--|{ DEVELOPER : "включает"</code></p>
 <p><strong>Описание:</strong><br />
 Это связь «один ко многим» с обязательным участием с обеих сторон:

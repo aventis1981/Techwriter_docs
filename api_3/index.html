@@ -1157,6 +1157,8 @@
       
         
       
+        
+      
     
     
     
@@ -1361,28 +1363,28 @@
 </blockquote>
 <h3 id="_3">Примеры запросов</h3>
 <h4 id="curl">cURL</h4>
-<pre><code class="language-bash">curl -X POST {{base_url}}/objects \
-  -H &quot;Content-Type: application/json&quot; \
-  -d '{
-    &quot;name&quot;: &quot;new name&quot;,
-    &quot;data&quot;: {
-      &quot;anyKey&quot;: &quot;любое значение&quot;,
-      &quot;anotherField&quot;: 123
-    }
-  }'
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="o">{{</span>base_url<span class="o">}}</span>/objects<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "name": "new name",</span>
+<span class="s1">    "data": {</span>
+<span class="s1">      "anyKey": "любое значение",</span>
+<span class="s1">      "anotherField": 123</span>
+<span class="s1">    }</span>
+<span class="s1">  }'</span>
+</code></pre></div>
 <h4 id="json">JSON: с данными</h4>
 <p>Запрос с <code>data</code>:</p>
-<pre><code class="language-jsonc">{
-  &quot;name&quot;: &quot;new name&quot;,
-  &quot;data&quot;: {
-    &quot;anyKey&quot;: &quot;любое значение&quot;
+<div class="highlight"><pre><span></span><code>{
+  "name": "new name",
+  "data": {
+    "anyKey": "любое значение"
   }
 }
-</code></pre>
+</code></pre></div>
 <h4 id="json_1">JSON: пустой запрос (минимальный кейс)</h4>
-<pre><code class="language-json">{ }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h2 id="_4">Коды ответов и поведение</h2>
 <table>
 <thead>
@@ -1410,23 +1412,23 @@
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
 <p>С данными:</p>
-<pre><code class="language-json">{
-  &quot;id&quot;: &quot;ff808181a09d98f701a0c97c851d6f4a&quot;,
-  &quot;name&quot;: &quot;new name&quot;,
-  &quot;createdAt&quot;: 1790086776093,
-  &quot;data&quot;: {
-    &quot;anyKey&quot;: &quot;любое значение&quot;
-  }
-}
-</code></pre>
-<p>Без <code>data</code> и <code>name</code>:</p>
-<pre><code class="language-json">{
-    &quot;id&quot;: &quot;ff808181a09d98f701a12b569ca13d81&quot;,
-    &quot;name&quot;: null,
-    &quot;createdAt&quot;: 1791728458914,
-    &quot;data&quot;: null
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ff808181a09d98f701a0c97c851d6f4a"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1790086776093</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"anyKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"любое значение"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Без <code>data</code> и <code>name</code>:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ff808181a09d98f701a12b569ca13d81"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1791728458914</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h2 id="_5">Структура ключевых полей</h2>
 <table>
 <thead>

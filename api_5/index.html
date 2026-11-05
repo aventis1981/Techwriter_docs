@@ -1124,6 +1124,8 @@
       
         
       
+        
+      
     
     
     
@@ -1327,12 +1329,12 @@
 <hr />
 <h3 id="_2">Примеры запросов</h3>
 <h4 id="curl">cURL</h4>
-<p>Запрос для одного объекта (id=1):</p>
-<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1
-</code></pre>
-<p>Запрос для 2 объектов (id=1, id=ff808181a09d98f701a0ce34e2487b39):</p>
-<pre><code class="language-bash">curl -X GET https://api.restful-api.dev/objects?id=1&amp;id=ff808181a09d98f701a0ce34e2487b39
-</code></pre>
+<p>Запрос для одного объекта (id=1):
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>https://api.restful-api.dev/objects?id<span class="o">=</span><span class="m">1</span>
+</code></pre></div></p>
+<p>Запрос для 2 объектов (id=1, id=ff808181a09d98f701a0ce34e2487b39):
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>https://api.restful-api.dev/objects?id<span class="o">=</span><span class="m">1</span><span class="p">&amp;</span><span class="nv">id</span><span class="o">=</span>ff808181a09d98f701a0ce34e2487b39
+</code></pre></div></p>
 <h2 id="_3">Коды ответов и поведение</h2>
 <table>
 <thead>
@@ -1353,27 +1355,27 @@
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
-<p>Пример ответа для запроса двух объектов:</p>
-<pre><code class="language-json">[
-    {
-        &quot;id&quot;: &quot;1&quot;,
-        &quot;name&quot;: &quot;Google Pixel 6 Pro&quot;,
-        &quot;data&quot;: {
-            &quot;color&quot;: &quot;Cloudy White&quot;,
-            &quot;capacity&quot;: &quot;128 GB&quot;
-        }
-    },
-    {
-        &quot;id&quot;: &quot;ff808181a09d98f701a0ce34e2487b39&quot;,
-        &quot;name&quot;: &quot;name&quot;,
-        &quot;data&quot;: {
-            &quot;title&quot;: &quot;new object2&quot;,
-            &quot;body&quot;: &quot;this is a text for object's body2&quot;,
-            &quot;userId&quot;: 2
-        }
-    }
-]
-</code></pre>
+<p>Пример ответа для запроса двух объектов:
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Pixel 6 Pro"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cloudy White"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128 GB"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ff808181a09d98f701a0ce34e2487b39"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new object2"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a text for object's body2"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></p>
 <h2 id="_4">Структура ключевых полей</h2>
 <table>
 <thead>

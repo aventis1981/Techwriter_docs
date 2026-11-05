@@ -1157,6 +1157,8 @@
       
         
       
+        
+      
     
     
     
@@ -1344,21 +1346,21 @@
 <hr />
 <h3 id="_2">Примеры запросов</h3>
 <h4 id="curl">cURL</h4>
-<pre><code class="language-bash">curl -X PATCH https://api.restful-api.dev/objects/1 \
-  -H &quot;Content-Type: application/json&quot; \
-  -d '{
-    &quot;data&quot;: {
-      &quot;title&quot;: &quot;only title updated&quot;
-    }
-  }'
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span>https://api.restful-api.dev/objects/1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "data": {</span>
+<span class="s1">      "title": "only title updated"</span>
+<span class="s1">    }</span>
+<span class="s1">  }'</span>
+</code></pre></div>
 <h4 id="json">JSON</h4>
-<pre><code class="language-jsonc">{            
-  &quot;data&quot;: {                          
-    &quot;title&quot;: &quot;only title updated&quot;                          
+<div class="highlight"><pre><span></span><code>{            
+  "data": {                          
+    "title": "only title updated"                          
   }
 }
-</code></pre>
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1435,22 +1437,22 @@
 </tbody>
 </table>
 <h2 id="200-ok">Формат успешного ответа (200 OK)</h2>
-<p>Пример ответа для объекта с id=ff808181a09d98f701a0e8e0d40736b3:</p>
-<pre><code class="language-json">{
-    &quot;id&quot;: &quot;1&quot;,
-    &quot;name&quot;: &quot;name-updated&quot;,
-    &quot;updatedAt&quot;: 1790676334420,
-    &quot;data&quot;: {
-        &quot;title&quot;: &quot;only title updated&quot;
-    }
-}
-</code></pre>
+<p>Пример ответа для объекта с id=ff808181a09d98f701a0e8e0d40736b3:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name-updated"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1790676334420</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"only title updated"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h2 id="400-bad-request">Пример ответа при ошибке 400 (Bad Request)</h2>
-<p>Если в теле запроса некорректный JSON или нарушена структура, сервер вернёт:</p>
-<pre><code class="language-json">{
-  &quot;error&quot;: &quot;Invalid request body&quot;
-}
-</code></pre>
+<p>Если в теле запроса некорректный JSON или нарушена структура, сервер вернёт:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid request body"</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <blockquote>
 <p>Важно: При ошибке 400 сервер не возвращает детали о том, какое именно поле невалидно (например, «поле name слишком длинное»). 
 Клиент получает только общее сообщение Invalid request body. Для отладки рекомендуется проверять валидность JSON до отправки запроса.</p>

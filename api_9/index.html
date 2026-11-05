@@ -1107,6 +1107,8 @@
       
         
       
+        
+      
     
     
     
@@ -1280,9 +1282,9 @@
 </blockquote>
 <hr />
 <h3 id="_3">Примеры запросов</h3>
-<p>Для конкретного объекта (например, id=1)</p>
-<pre><code class="language-bash">curl -X DELETE &quot;https://api.restful-api.dev/objects/1&quot;
-</code></pre>
+<p>Для конкретного объекта (например, id=1)
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">"https://api.restful-api.dev/objects/1"</span>
+</code></pre></div></p>
 <p>В Postman использовать: {{base_url}}/objects/{id}
 где {id} — уникальный идентификатор объекта, существующего в системе.</p>
 <h2 id="_4">Коды ответов и поведение</h2>
@@ -1311,16 +1313,16 @@
 </tbody>
 </table>
 <h2 id="200-ok">Пример успешного ответа (200 OK)</h2>
-<p>Пример ответа для объекта с id=1:</p>
-<pre><code class="language-json">{
-    &quot;message&quot;: &quot;Object with id = 1 has been deleted.&quot;
-}
-</code></pre>
+<p>Пример ответа для объекта с id=1:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Object with id = 1 has been deleted."</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h2 id="404-not-found">Пример ответа при ошибке 404 (Not Found)</h2>
-<pre><code class="language-json">{
-    &quot;error&quot;: &quot;Object with id = 2 doesn't exist.&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Object with id = 2 doesn't exist."</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_5">Связанные эндпоинты</h2>
 <ul>
 <li><code>GET /objects</code> — получить список объектов.</li>

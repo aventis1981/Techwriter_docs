@@ -939,6 +939,8 @@
       
         
       
+        
+      
     
     
     
@@ -1116,9 +1118,9 @@
 </blockquote>
 <hr />
 <h3 id="curl">Запрос cURL</h3>
-<pre><code class="language-bash">curl -X GET &quot;https://api.restful-api.dev/collections&quot; \
-  -H &quot;x-api-key: {{api_key}}&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"https://api.restful-api.dev/collections"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"x-api-key: {{api_key}}"</span>
+</code></pre></div>
 <h2 id="_2">Коды ответов и поведение</h2>
 <table>
 <thead>
@@ -1169,18 +1171,18 @@
 </ul>
 </blockquote>
 <h2 id="200-ok">Пример успешного ответа (200 OK)</h2>
-<p>Пример ответа - массив с 2 ресурсами <code>collection</code> (каждая коллекция содержит по 2 объекта):</p>
-<pre><code class="language-json">[
-    {
-        &quot;collectionName&quot;: &quot;MyCollection1&quot;,
-        &quot;objectCount&quot;: 2
-    },
-    {
-        &quot;collectionName&quot;: &quot;MyCollection2&quot;,
-        &quot;objectCount&quot;: 2
-    }
-]
-</code></pre>
+<p>Пример ответа - массив с 2 ресурсами <code>collection</code> (каждая коллекция содержит по 2 объекта):
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"collectionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyCollection1"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"objectCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"collectionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyCollection2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"objectCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></p>
 <h2 id="_3">Условие для успешного ответа</h2>
 <p>Коллекции с объектами будут показаны в том случае, если они были ранее созданы пользователем.
 Коллекция создается с помощью метода <code>POST /collections/{collection}/objects</code>: 
