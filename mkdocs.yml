@@ -24,7 +24,8 @@
       - Tests: api_12_tests.md
   - Диаграммы: 
       - Диаграммы: diagrams.md
-      - ER-диаграммы (нотация): er-diagrams.md 
+      - ER-диаграммы: er_diagrams_my.md
+      - ER-диаграммы (нотация): er_diagrams_notation.md 
  copyright: "(c) AVENTIS 2026"  
  theme:  # Тема сайта, информация о ее параметрах
    name: material  # Название темы
@@ -68,4 +69,12 @@
     - navigation.prune        # не грузит все страницы в меню (быстрее работает)
     - announce.dismiss       # баннер можно закрыть
    language: ru # Язык
- 
+ plugins: 
+  - search
+ markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format 
